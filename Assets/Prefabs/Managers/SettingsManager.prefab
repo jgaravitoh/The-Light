@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7629495421281895552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5305778118428371856}
+  - component: {fileID: 520212651151126725}
+  m_Layer: 0
+  m_Name: SettingsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5305778118428371856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629495421281895552}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &520212651151126725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629495421281895552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740582967309aa341b3f39875703e7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  ambientSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
+  masterParameterString: 
+  SFXParameterString: 
+  ambientParameterString: 
+  musicParameterString: 
+  masterVolumeImageComponent: {fileID: 0}
+  SFXVolumeImageComponent: {fileID: 0}
+  ambientVolumeImageComponent: {fileID: 0}
+  musicVolumeImageComponent: {fileID: 0}
+  imageSoundMute: {fileID: 0}
+  imageSound0to24: {fileID: 0}
+  imageSound25to49: {fileID: 0}
+  imageSound50to74: {fileID: 0}
+  imageSound75to100: {fileID: 0}
+  audioMixer: {fileID: 0}
+  screenResolutionDropdown: {fileID: 0}
+  screenModeDropdown: {fileID: 0}
+  antialiasingDropdown: {fileID: 0}
+  antialiasingMSAADropdown: {fileID: 0}
+  softShadowsDropdown: {fileID: 0}
+  shadowsStateDropdown: {fileID: 0}
+  urpQualityAssetList: []
+  urpQualityRendererAsset: {fileID: 0}
