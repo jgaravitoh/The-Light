@@ -1,0 +1,17 @@
+id,separator,character name,dialogues(different options for example),color name,color dialogue,speed dialogue,image name
+0,test1,Meow,START Test dialogue id 0                           AASAFSASAG,#eb9534,#d1d1d1,0.3,meowtest1
+1,,Meow,NEVER GONNA GIVE YOUU UPPPP,#eb9534,#d1d1d2,0.6,n/a
+2,,Meow,NEVER GONNA LET YOU DOWN,#c334eb,#d1d1d3,0.9,n/a
+3,,Meow,Test dialogue id 3,#eb3434,#d1d1d4,1.2,n/a
+4,,Meow,Test dialogue id 4,#ebd334,#d1d1d5,1.5,n/a
+5,,Meow,Test dialogue id 5,#34eb89,#d1d1d6,1.8,n/a
+6,,Meow,Test dialogue id 6,#34e5eb,#d1d1d7,2.1,n/a
+7,test1,Meow,END Test dialogue id 7,#eb3499,#d1d1d8,2.4,n/a
+8,test2,Sarade,Pene,#eb9534,#d1d1d1,0.3,n/a
+9,,Sarade,I AM NOT THROWING AWAY MY SHOT,#eb9534,#d1d1d2,0.6,n/a
+10,,Sarade,WELL IF IT ISN'T AARON BURR,#c334eb,#d1d1d3,0.9,n/a
+11,,Sarade,Oh shit,#eb3434,#d1d1d4,1.2,n/a
+12,,Sarade,Only 19 but my mind is older,#ebd334,#d1d1d5,1.5,n/a
+13,,Sarade,"IT'S HARD LISTENING TO YOU WITH A STRAIGHT FACE, lol",#34eb89,#d1d1d6,1.8,n/a
+14,,Sarade,HEY TURN ARROWN BEND OVER I'LL SHOW YOU WHERE MY SHOE FITS,#34e5eb,#d1d1d7,2.1,n/a
+15,test2,Sarade,END Test dialogue id 16,#eb3499,#d1d1d8,2.4,n/a

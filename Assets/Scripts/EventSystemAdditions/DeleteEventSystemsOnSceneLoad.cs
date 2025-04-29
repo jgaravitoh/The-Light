@@ -40,7 +40,8 @@ public class DeleteEventSystemsOnSceneLoad : MonoBehaviour
     // Function to find and delete all EventSystem objects except the one with the tag "EventSystem"
     void DeleteAllEventSystemsExceptTagged()
     {
-        EventSystem[] eventSystems = FindObjectsOfType<EventSystem>();
+        //EventSystem[] eventSystems = FindObjectsOfType<EventSystem>(); //DEPRECATED
+        EventSystem[] eventSystems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
         foreach (EventSystem eventSystem in eventSystems)
         {
             Debug.Log("encontró un objeto EventSystem");

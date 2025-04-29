@@ -21,5 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings Tests/URP testing options 2.unity
     guid: be245814d5bc4b84682837431fc9bf23
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: cb97fe0314ccd3b4a969b774b76e31f2, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
