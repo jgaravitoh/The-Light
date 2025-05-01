@@ -14,7 +14,7 @@ public class FirstTestDialogues_v2 : MonoBehaviour
     {
         if (!dialogueStarted && dialogueManager.dialogueTable != null)
         {
-            dialogueManager.LoadDialogue(20);
+            dialogueManager.LoadDialogue(8);
             dialogueStarted = true;
         }
     }
