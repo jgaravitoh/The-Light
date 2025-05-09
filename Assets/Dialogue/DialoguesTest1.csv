@@ -20,3 +20,6 @@ id,separator,character name,dialogues(different options for example),color name,
 18,,Prueba Separador Solo varios dialogos,este es el dialogo final de esta prueba,#eb3499,#d1d1d8,0.191761905,n/a
 19,test6,Prueba Separador Solo Fin,"Este dialogo es solitario, está al final del documento y es el único",#eb3499,#d1d1d8,0.191761905,n/a
 20,prueba final,prueba final,este dialogo es la prueba final,#eb3499,#d1d1d8,0.191761905,n/a
+21,prueba final2,prueba final,este dialogo es la prueba final,#eb3499,#d1d1d8,0.191761905,n/a
+,,,,,,,
+,,,,,,,

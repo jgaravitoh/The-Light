@@ -16,13 +16,11 @@ public static class CSVParser
             {
                 if (inQuotes && i + 1 < line.Length && line[i + 1] == '"')
                 {
-                    // Escaped quote ("")
                     currentField += '"';
-                    i++; // skip next quote
+                    i++;
                 }
                 else
                 {
-                    // Toggle quote state
                     inQuotes = !inQuotes;
                 }
             }
@@ -37,7 +35,7 @@ public static class CSVParser
             }
         }
 
-        fields.Add(currentField); // Add last field
+        fields.Add(currentField); // último campo
         return fields.ToArray();
     }
 }

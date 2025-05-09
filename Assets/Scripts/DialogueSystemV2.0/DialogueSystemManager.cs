@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEditor.Rendering;
 using System.Drawing;
 using Unity.VisualScripting;
+using UnityEngine.UIElements;
 public class DialogueSystemManager : MonoBehaviour
 {
     [SerializeField]
@@ -51,6 +52,19 @@ public class DialogueSystemManager : MonoBehaviour
 
     public void LoadDialogue(int id)
     {
+        Debug.Log(dialogueTable.Dialogues[0]);
+        Debug.Log(dialogueTable.Separators.Length);
+        Debug.Log(dialogueTable.CharacterNames.Length);
+        Debug.Log(dialogueTable.Dialogues.Length);
+        Debug.Log(dialogueTable.ColorNames.Length);
+        Debug.Log(dialogueTable.ColorDialogues.Length);
+        Debug.Log(dialogueTable.SpeedDialogues.Length);
+        Debug.Log(dialogueTable.ImageNames.Length);
+        Debug.Log(dialogueTable.Ids.Length);
+        Debug.Log(dialogueTable.Ids[id]+dialogueTable.Separators[id]+
+                                     dialogueTable.CharacterNames[id]+ dialogueTable.Dialogues[id]+
+                                     dialogueTable.ColorNames[id]+ dialogueTable.ColorDialogues[id]+
+                                     dialogueTable.SpeedDialogues[id]+ dialogueTable.ImageNames[id]);
         // Display the dialogue system (if it was previously off).
         DialogueCanva.SetActive(true);
         
