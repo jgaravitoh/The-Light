@@ -1,25 +1,12 @@
 id,separator,character name,dialogues(different options for example),color name,color dialogue,speed dialogue,image name
-0,test1,Meow,START Test dialogue id 0                           AASAFSASAG,#eb9534,#d1d1d1,0.001,meowtest1
+0,test1 conversation,Meow,START Test dialogue id 0 ,#eb9534,#d1d1d1,0.001,n/a
 1,,Meow,NEVER GONNA GIVE YOUU UPPPP,#eb9534,#d1d1d2,0.05,n/a
 2,,Meow,NEVER GONNA LET YOU DOWN,#c334eb,#d1d1d3,0.1,n/a
-3,,Meow,Test dialogue id 3,#eb3434,#d1d1d4,0.001,n/a
-4,,Meow,Test dialogue id 4,#ebd334,#d1d1d5,0.05,n/a
-5,,Meow,Test dialogue id 5,#34eb89,#d1d1d6,0.1,n/a
-6,,Meow,Test dialogue id 6,#34e5eb,#d1d1d7,0.089933333,n/a
-7,test1,Meow,END Test dialogue id 7,#eb3499,#d1d1d8,0.101247619,n/a
-8,test2,Sarade,Pene,#eb9534,#d1d1d1,0.112561905,n/a
-9,,Sarade,I AM NOT THROWING AWAY MY SHOT,#eb9534,#d1d1d2,0.12387619,n/a
-10,,Sarade,WELL IF IT ISN'T AARON BURR,#c334eb,#d1d1d3,0.135190476,n/a
-11,,Sarade,Oh shit,#eb3434,#d1d1d4,0.146504762,n/a
-12,,Sarade,Only 19 but my mind is older,#ebd334,#d1d1d5,0.157819048,n/a
-13,,Sarade,"IT'S HARD LISTENING TO YOU WITH A STRAIGHT FACE, lol",#34eb89,#d1d1d6,0.169133333,n/a
-14,,Sarade,HEY TURN ARROWN BEND OVER I'LL SHOW YOU WHERE MY SHOE FITS,#34e5eb,#d1d1d7,0.180447619,n/a
-15,test2,Sarade,END Test dialogue id 16,#eb3499,#d1d1d8,0.191761905,n/a
-16,test3,Prueba Separador Solo,"Este dialogo es solitario, tiene separadores antes y después",#eb3499,#d1d1d8,0.191761905,n/a
-17,test4,Prueba Separador Solo varios dialogos,"Este separador es solitario, pero tiene más dialogos que pertenecen a su grupo",#eb3499,#d1d1d8,0.191761905,n/a
-18,,Prueba Separador Solo varios dialogos,este es el dialogo final de esta prueba,#eb3499,#d1d1d8,0.191761905,n/a
-19,test6,Prueba Separador Solo Fin,"Este dialogo es solitario, está al final del documento y es el único",#eb3499,#d1d1d8,0.191761905,n/a
-20,prueba final,prueba final,este dialogo es la prueba final,#eb3499,#d1d1d8,0.191761905,n/a
-21,prueba final2,prueba final,este dialogo es la prueba final,#eb3499,#d1d1d8,0.191761905,n/a
-,,,,,,,
-,,,,,,,
+3,,Sarade,Pene,#34eb89,#d1d1d6,0.1,n/a
+4,,Sarade,I AM NOT THROWING AWAY MY SHOT,#eb9534,#d1d1d2,0.12387619,n/a
+5,,Meow,I'm waving through a window,#ebd334,#d1d1d5,0.05,n/a
+6,,Sarade,I try to speak but nobody can hear,#34eb89,#d1d1d6,0.1,n/a
+7,,Meow,Test dialogue id ,#34e5eb,#d1d1d7,0.089933333,n/a
+8,test1 conversation,Meow,END Test dialogue id ,#eb3499,#d1d1d8,0.101247619,n/a
+9,test2 singular dialogue,Sarade,Este dialogo es único y solo se reproducirá este gracias al sistema de dialogos,#34eb89,#d1d1d6,0.1,n/a
+10,test3 mostrando flexibilidad,Sarade,"Este dialogo es crea, lo guardo en el archivo, y ya es detectable por el sistema",#34eb89,#d1d1d6,0.1,n/a
