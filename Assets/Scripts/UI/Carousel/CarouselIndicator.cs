@@ -23,7 +23,7 @@ public class CarouselIndicator : MonoBehaviour
         button.onClick.RemoveListener(_onClickAction);
     }
 
-    private void Reset()
+    public void Reset()
     {
         image = GetComponentInChildren<Image>();
         var color = image.color;

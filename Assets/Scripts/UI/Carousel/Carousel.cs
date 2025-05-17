@@ -56,6 +56,7 @@ public class Carousel : MonoBehaviour, IEndDragHandler
 
             var indicator = Instantiate(indicatorPrefab, indicatorParent);
             indicator.Initialize(() => ScrollToSpecificIndex(entries.IndexOf(entry)));
+            indicator.Reset();
             _indicators.Add(indicator);
         }
 
