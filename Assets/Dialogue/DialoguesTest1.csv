@@ -1,4 +1,4 @@
-id,separator,character name,dialogues(different options for example),color name,color dialogue,speed dialogue,image name
+﻿id,separator,character name,dialogues(different options for example),color name,color dialogue,speed dialogue,image name
 0,test1 conversation,Meow,START Test dialogue id 0 ,#eb9534,#d1d1d1,0.001,n/a
 1,,Meow,NEVER GONNA GIVE YOUU UPPPP,#eb9534,#d1d1d2,0.05,n/a
 2,,Meow,NEVER GONNA LET YOU DOWN,#c334eb,#d1d1d3,0.1,n/a
@@ -7,6 +7,7 @@ id,separator,character name,dialogues(different options for example),color name,
 5,,Meow,I'm waving through a window,#ebd334,#d1d1d5,0.05,n/a
 6,,Sarade,I try to speak but nobody can hear,#34eb89,#d1d1d6,0.1,n/a
 7,,Meow,Test dialogue id ,#34e5eb,#d1d1d7,0.089933333,n/a
-8,test1 conversation,Meow,END Test dialogue id ,#eb3499,#d1d1d8,0.101247619,n/a
-9,test2 singular dialogue,Sarade,Este dialogo es �nico y solo se reproducir� este gracias al sistema de dialogos,#34eb89,#d1d1d6,0.1,n/a
-10,test3 mostrando flexibilidad,Sarade,"Este dialogo es crea, lo guardo en el archivo, y ya es detectable por el sistema",#34eb89,#d1d1d6,0.1,n/a
+8,,Sarade,"¡Probando! ñ, canción, turururuuru ^^ |  ( ) @#%$*-_+=/~~``.",#34eb89,#d1d1d6,0.1,n/a
+9,test1 conversation,Meow,END Test dialogue id ,#eb3499,#d1d1d8,0.101247619,n/a
+10,test2 singular dialogue,Sarade,Este dialogo es único y solo se reproducirá este gracias al sistema de dialogos,#34eb89,#d1d1d6,0.1,n/a
+11,test3 mostrando flexibilidad,Sarade,"Este dialogo es crea, lo guardo en el archivo, y ya es detectable por el sistema",#34eb89,#d1d1d6,0.1,n/a

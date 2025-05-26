@@ -727,6 +727,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1133796014266859254, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b15a689d4fb980749808631361dd4be6, type: 2}
+    - target: {fileID: 1133796014266859254, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 9160812511099262577, guid: b15a689d4fb980749808631361dd4be6, type: 2}
+    - target: {fileID: 1133796014266859254, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1374381136086571889, guid: e7ceeff825107354098b107360646bf3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -774,6 +786,30 @@ PrefabInstance:
     - target: {fileID: 3738125418630822432, guid: e7ceeff825107354098b107360646bf3, type: 3}
       propertyPath: m_Name
       value: DialogueManagerV2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918671876729078084, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b15a689d4fb980749808631361dd4be6, type: 2}
+    - target: {fileID: 4918671876729078084, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 9160812511099262577, guid: b15a689d4fb980749808631361dd4be6, type: 2}
+    - target: {fileID: 4918671876729078084, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5476437564204013073, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b15a689d4fb980749808631361dd4be6, type: 2}
+    - target: {fileID: 5476437564204013073, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 9160812511099262577, guid: b15a689d4fb980749808631361dd4be6, type: 2}
+    - target: {fileID: 5476437564204013073, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -828,10 +864,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5462799200244320397, guid: 2138e3fdeceea3f4393761d5b55bfcbd, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b15a689d4fb980749808631361dd4be6, type: 2}
     - target: {fileID: 6580704827244509721, guid: 2138e3fdeceea3f4393761d5b55bfcbd, type: 3}
       propertyPath: m_Name
       value: DialogueHistoryManagerV2
       objectReference: {fileID: 0}
+    - target: {fileID: 6819835605369589978, guid: 2138e3fdeceea3f4393761d5b55bfcbd, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b15a689d4fb980749808631361dd4be6, type: 2}
+    - target: {fileID: 7266851873929232087, guid: 2138e3fdeceea3f4393761d5b55bfcbd, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b15a689d4fb980749808631361dd4be6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

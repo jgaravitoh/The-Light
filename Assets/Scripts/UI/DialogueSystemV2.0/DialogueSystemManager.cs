@@ -1,12 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem;
-using UnityEditor.Rendering;
-using System.Drawing;
-using Unity.VisualScripting;
-using UnityEngine.UIElements;
+
 public class DialogueSystemManager : MonoBehaviour
 {
     [SerializeField]
