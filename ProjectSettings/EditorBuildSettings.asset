@@ -20,9 +20,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Settings Tests/URP testing options 2.unity
     guid: be245814d5bc4b84682837431fc9bf23
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Miscelaneous/Computer.unity
     guid: e2a1ea665764e0647bdd9d0ea66afaa1
+  - enabled: 1
+    path: Assets/Scenes/First Tests Scenes Sarade/fuego.unity
+    guid: 30d3bfea8e4f14948af05fa3bc9623d1
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: cb97fe0314ccd3b4a969b774b76e31f2, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

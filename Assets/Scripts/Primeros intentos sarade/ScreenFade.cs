@@ -43,7 +43,7 @@ public class ScreenFade : MonoBehaviour
         color.a = 1f;
         fadeImage.color = color;
         fadeImage.raycastTarget = true; // Bloquea interacciones detrás del fade
-
+        Invoke(nameof(KillGame), 2);
         // ?? Iniciamos el fade del texto después de un delay
         StartCoroutine(FadeInText());
     }
@@ -64,5 +64,9 @@ public class ScreenFade : MonoBehaviour
         }
 
         textCanvasGroup.alpha = 1f; // ?? Aseguramos que el texto sea completamente visible
+    }
+    private void KillGame()
+    {
+        Application.Quit();
     }
 }

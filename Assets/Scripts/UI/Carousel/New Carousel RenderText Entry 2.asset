@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4648442583f10554ab17a1c3c89d8351, type: 3}
+  m_Name: New Carousel RenderText Entry 2
+  m_EditorClassIdentifier: 
+  <EntryGraphic>k__BackingField: {fileID: 8400000, guid: 3de66bcc4cd599c48b61ad9e98bd6ead, type: 2}
+  <Headline>k__BackingField: Singularity
+  <Description>k__BackingField: "Si un \xE1lbum puede hacerte sentir una monta\xF1a
+    de emociones a trav\xE9s de historias distintas, cada una con su propia personalidad,
+    es este. De traiciones a esperanza, de rencor a duelo... \xBFEres lobo o eres
+    el cordero? \xBFEl fr\xEDo invierno en diciembre se te escapa? \xBFSer\xE1s el
+    autor de tu vida? La banda Ap\xE1galos logra proponer estas dudas a lo largo
+    de sus canciones. Es realmente una pena que no sean tan\_reconocidos..."
