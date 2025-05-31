@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ScreenFade : MonoBehaviour
 {
@@ -67,6 +68,6 @@ public class ScreenFade : MonoBehaviour
     }
     private void KillGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(1);
     }
 }

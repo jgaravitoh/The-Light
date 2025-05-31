@@ -47,6 +47,8 @@ public class DialogueSystemManager : MonoBehaviour
 
     public void LoadDialogue(int id)
     {
+
+        PlayerMovement.sharedInstancePlayerMovement.allowMovement = false;
         Debug.Log(dialogueTable.Dialogues[0]);
         Debug.Log(dialogueTable.Separators.Length);
         Debug.Log(dialogueTable.CharacterNames.Length);
@@ -166,9 +168,12 @@ public class DialogueSystemManager : MonoBehaviour
     }
     void endDialogueSequence()
     {
+
         DialogueCanva.SetActive(false);
         globalSeparator = string.Empty;
         globalSeparatorFlag = false;
+
+        PlayerMovement.sharedInstancePlayerMovement.allowMovement = true;
         StopAllCoroutines();
     }
 }
