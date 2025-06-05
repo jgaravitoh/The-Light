@@ -18,11 +18,11 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetFloat("Vertical", vertical);
 
         // Forzar una animación manualmente
-        if (vertical > 0.1f) animator.Play("adelante");
-        else if (vertical < -0.1f) animator.Play("Idle");
-        else if (horizontal > 0.1f) animator.Play("Izquierda");
-        else if (horizontal < -0.1f) animator.Play("Derecha");
-        else animator.Play("parao");
+        if (vertical > 0.1f) animator.Play("EvanAtras");
+        else if (vertical < -0.1f) animator.Play("EvanAdelante");
+        else if (horizontal > 0.1f) animator.Play("EvanIzquierda");
+        else if (horizontal < -0.1f) animator.Play("EvanDerecha");
+        else animator.Play("EvanIdle");
     }
 
 }
