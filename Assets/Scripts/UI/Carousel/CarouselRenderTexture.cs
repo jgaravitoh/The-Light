@@ -41,6 +41,18 @@ public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
 
     private int _currentIndex = 0;
     private Coroutine _scrollCoroutine;
+    private void OnEnable()
+    {
+        ScrollTo(0);
+    }
+    private void OnDisable()
+    {
+        foreach (GameObject _gameObject  in gameObjectsModels)
+        {
+            _gameObject.SetActive(false);
+        }
+
+    }
 
     private void Reset()
     {
@@ -49,7 +61,7 @@ public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
     }
 
 
-    private void Start()
+    private void Awake()
     {
         foreach (var entry in entries)
         {
@@ -70,6 +82,7 @@ public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
         var headline = entries[0].Headline;
         var description = entries[0].Description;
         textBoxController.SetTextWithoutFade(headline, description);
+        ScrollTo(_currentIndex);
     }
 
     private void ClearCurrentIndex()
@@ -89,8 +102,8 @@ public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
     {
         ClearCurrentIndex();
 
-        _currentIndex = (_currentIndex + 1) % _imagesForEntries.Count;
-        ScrollTo(_currentIndex);
+        //_currentIndex = (_currentIndex + 1) % _imagesForEntries.Count;
+        ScrollTo((_currentIndex + 1) % _imagesForEntries.Count);
 
     }
 
@@ -98,17 +111,20 @@ public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
     {
         ClearCurrentIndex();
 
-        _currentIndex = (_currentIndex - 1 + _imagesForEntries.Count) % _imagesForEntries.Count;
-        ScrollTo(_currentIndex);
+        //_currentIndex = (_currentIndex - 1 + _imagesForEntries.Count) % _imagesForEntries.Count;
+        ScrollTo((_currentIndex - 1 + _imagesForEntries.Count) % _imagesForEntries.Count);
     }
     private void ResetModel()
     {
         gameObjectsModels[_currentIndex].SetActive(false);
         gameObjectsModels[_currentIndex].SetActive(true);
     }
+    
     private void ScrollTo(int index)
     {
+        gameObjectsModels[_currentIndex].SetActive(false);
         _currentIndex = index;
+        gameObjectsModels[_currentIndex].SetActive(true);
         _autoScrollTimer = autoScrollInterval;
         float targetHorizontalPosition = (float)_currentIndex / (_imagesForEntries.Count - 1);
 
@@ -125,7 +141,7 @@ public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
         _indicators[_currentIndex].Activate(duration);
         callToAction.onClick.AddListener(entries[_currentIndex].Interact);
 
-        ResetModel();
+        //ResetModel();
     }
 
     private IEnumerator LerpToPos(float targetHorizontalPosition)

@@ -86,16 +86,16 @@ public class Carousel : MonoBehaviour, IEndDragHandler
     {
         ClearCurrentIndex();
 
-        _currentIndex = (_currentIndex + 1) % _imagesForEntries.Count;
-        ScrollTo(_currentIndex);
+        //_currentIndex = (_currentIndex + 1) % _imagesForEntries.Count;
+        ScrollTo((_currentIndex + 1) % _imagesForEntries.Count);
     }
 
     public void ScrollToPrevious()
     {
         ClearCurrentIndex();
 
-        _currentIndex = (_currentIndex - 1 + _imagesForEntries.Count) % _imagesForEntries.Count;
-        ScrollTo(_currentIndex);
+        //_currentIndex = (_currentIndex - 1 + _imagesForEntries.Count) % _imagesForEntries.Count;
+        ScrollTo((_currentIndex - 1 + _imagesForEntries.Count) % _imagesForEntries.Count);
     }
 
     private void ScrollTo(int index)
