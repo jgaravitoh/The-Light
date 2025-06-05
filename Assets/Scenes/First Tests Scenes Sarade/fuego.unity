@@ -450,8 +450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8879769b897aad54896fc4710c122a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 0}
+  videoPlayer: {fileID: 438661407}
   gameCamera: {fileID: 655874206}
+  killAppBool: 0
 --- !u!1 &488684568
 GameObject:
   m_ObjectHideFlags: 0
