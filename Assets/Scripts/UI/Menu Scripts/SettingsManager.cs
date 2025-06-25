@@ -9,6 +9,8 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using System.Reflection;
 using ShadowResolution = UnityEngine.Rendering.Universal.ShadowResolution;
+using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -51,7 +53,6 @@ public class SettingsManager : MonoBehaviour
     private int softShadowsIndex = 0;
     private int shadowsStateIndex = 0;
 
-
     private Camera[] camerasOnSceneArray;
     // Dropdown Option Lists
     List<string> antialiasingOptionsList = new List<string> { "Apagado", "FXAA", "SMAA", "TAA" };
@@ -63,10 +64,14 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private TMP_Dropdown antialiasingMSAADropdown;
     [SerializeField] private TMP_Dropdown softShadowsDropdown;
     [SerializeField] private TMP_Dropdown shadowsStateDropdown;
+    [SerializeField] private Slider renderScaleSlider;
+    [SerializeField] private GameObject renderScaleValueIndicator;
     [SerializeField] private List<UniversalRenderPipelineAsset> urpQualityAssetList;
     [SerializeField] private UniversalRendererData urpQualityRendererAsset;
+    
     private List<string> qualityLevels = new List<string>();
     private int screenQualityLevelIndex = 2;
+    
 
     // ~~~~~~~~~~~~ Private/Hidden settings on URP ~~~~~~~~~~~~
     #region Graphics Settings Variables
@@ -150,6 +155,11 @@ public class SettingsManager : MonoBehaviour
         GetUrpAssets();
         #endregion
 
+        #region Render Scale loading
+        if (PlayerPrefs.HasKey("RenderScaleValue")) { renderScaleSlider.value = PlayerPrefs.GetFloat("RenderScaleValue"); }
+        else { SetRenderScale(); }
+        #endregion
+
         #region Shadows settings loading
         shadowsStateDropdown.ClearOptions();
         shadowsStateDropdown.AddOptions(basicEnableDisableList);
@@ -183,7 +193,6 @@ public class SettingsManager : MonoBehaviour
         antialiasingMSAADropdown.RefreshShownValue(); antialiasingDropdown.RefreshShownValue();
         #endregion
     }
-
 
     #region Audio Settings Scripts
     public void SetMasterVolume()
@@ -348,7 +357,7 @@ public class SettingsManager : MonoBehaviour
 
     #region Stupid URP bullshit
 
-    #region URP variables, getters and setters for the fields
+    #region URP variables, getters and setters for the fields 
     // Please note that this code only works for the current render pipeline asset. As long as the different URP quality assets have the same render pipeline asset, you should be fine.
     private void InitializeHiddenPrivateFieldsURP() // Uses reflective programming to get URP fields that should be public (thank you @JimmyCushnie on GitHub)
     {
@@ -407,7 +416,17 @@ public class SettingsManager : MonoBehaviour
         set => softShadowsEnabled_FieldInfo.SetValue(GraphicsSettings.currentRenderPipeline, value);
     }
     #endregion
-    #region URP Fields UI (Dropdown functions) [Getters and Setters for interaction with the UI]
+    #region URP Fields UI (Dropdown functions) [Getters and Setters for interaction with the UI] [Render Scale, Shadows Settings]
+
+    #region Render Scale
+    public float GetRenderScale() { return PlayerPrefs.HasKey("RenderScaleValue") ? PlayerPrefs.GetFloat("RenderScaleValue") : renderScaleSlider.value; }
+    public void SetRenderScale()
+    {
+        PlayerPrefs.SetFloat("RenderScaleValue", renderScaleSlider.value); PlayerPrefs.Save();
+        //changeText(renderScaleValueIndicator, renderScaleSlider.value.ToString());
+        foreach (UniversalRenderPipelineAsset urpAsset in urpQualityAssetList) { if (urpAsset != null) { urpAsset.renderScale = renderScaleSlider.value; } }
+    }
+    #endregion
 
     #region Shadow settings
 
@@ -558,7 +577,6 @@ public class SettingsManager : MonoBehaviour
         else { Debug.LogError("MSAA Dropdown should only have 4 parameters, but received another index."); return; }
         
         foreach (UniversalRenderPipelineAsset urpAsset in urpQualityAssetList){ if (urpAsset != null){ urpAsset.msaaSampleCount = sampleCount; } }
-
         PlayerPrefs.SetInt("MSAAIndex", antialiasQualityMSAAIndex);
         PlayerPrefs.Save();
     }
@@ -610,5 +628,12 @@ public class SettingsManager : MonoBehaviour
         SetDropdownState(dropdown, false, 0.3f, indexToSet); // Disables the dropdown, making it non-interactable and visually indicating disabled state.
     }
 
+    #endregion
+
+    #region Change Text
+    private void changeText(GameObject _objectTMP, string _text)
+    {
+        _objectTMP.GetComponent<TextMeshPro>().text = _text;
+    }
     #endregion
 }

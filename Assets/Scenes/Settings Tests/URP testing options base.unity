@@ -904,11 +904,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 75.91, y: 0, z: 0}
---- !u!1 &286900435 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8846968090524573962, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-  m_PrefabInstance: {fileID: 921739122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &360741529 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5224105046971689779, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
@@ -928,6 +923,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 520212651151126725, guid: fa045fd1f513085468f7a9e4fda62a94, type: 3}
+      propertyPath: toValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 520212651151126725, guid: fa045fd1f513085468f7a9e4fda62a94, type: 3}
+      propertyPath: duration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 520212651151126725, guid: fa045fd1f513085468f7a9e4fda62a94, type: 3}
+      propertyPath: fromValue
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 520212651151126725, guid: fa045fd1f513085468f7a9e4fda62a94, type: 3}
       propertyPath: sfxSlider
       value: 
@@ -968,6 +975,10 @@ PrefabInstance:
       propertyPath: imageSound75to100
       value: 
       objectReference: {fileID: 21300000, guid: d50a50c9812f70a4fabf771e0da3a450, type: 3}
+    - target: {fileID: 520212651151126725, guid: fa045fd1f513085468f7a9e4fda62a94, type: 3}
+      propertyPath: renderScaleSlider
+      value: 
+      objectReference: {fileID: 921739123}
     - target: {fileID: 520212651151126725, guid: fa045fd1f513085468f7a9e4fda62a94, type: 3}
       propertyPath: SFXParameterString
       value: SFX
@@ -1248,17 +1259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &768149075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 520212651151126725, guid: fa045fd1f513085468f7a9e4fda62a94, type: 3}
-  m_PrefabInstance: {fileID: 363968323}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740582967309aa341b3f39875703e7a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &921739122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1267,29 +1267,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 226744279388306663, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 226744279388306663, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 226744279388306663, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSoftShadowsState
-      objectReference: {fileID: 0}
     - target: {fileID: 888249273354809042, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
       propertyPath: m_Name
       value: MenuManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1014693082001173176, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 1014693082001173176, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetAntialiasingQuality
       objectReference: {fileID: 0}
     - target: {fileID: 1559942676865242461, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1332,102 +1312,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1572922222049780091, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: mainMenuPanel
-      value: 
-      objectReference: {fileID: 286900435}
-    - target: {fileID: 1572922222049780091, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: deathMenuPanel
-      value: 
-      objectReference: {fileID: 1400666542}
-    - target: {fileID: 1572922222049780091, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: pauseMenuPanel
-      value: 
-      objectReference: {fileID: 1927706426}
-    - target: {fileID: 1572922222049780091, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: settingsMenuPanel
-      value: 
-      objectReference: {fileID: 1797427062}
-    - target: {fileID: 1572922222049780091, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: settingsScrollRect
-      value: 
-      objectReference: {fileID: 1212272537}
-    - target: {fileID: 5224105046971689779, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 5224105046971689779, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetScreenResolution
-      objectReference: {fileID: 0}
-    - target: {fileID: 5718184968382982540, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 5718184968382982540, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSFXVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779459475255516052, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      propertyPath: currentMenuState
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779459475255516052, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 5779459475255516052, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetAntialiasingMSAAQuality
-      objectReference: {fileID: 0}
-    - target: {fileID: 6077092716638723551, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 6077092716638723551, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMusicVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 6095195493585211035, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 6095195493585211035, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetScreenMode
-      objectReference: {fileID: 0}
-    - target: {fileID: 7121250192599959559, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 7121250192599959559, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMasterVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 8143918394539274266, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 8143918394539274266, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetAmbientVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932237034066296806, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8932237034066296806, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 768149075}
-    - target: {fileID: 8932237034066296806, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetShadowsState
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
+--- !u!114 &921739123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6577604429279756006, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
+  m_PrefabInstance: {fileID: 921739122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &956028709 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1014693082001173176, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
@@ -1697,17 +1600,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &1212272537 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7256406568823304361, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-  m_PrefabInstance: {fileID: 921739122}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1268138629 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8143918394539274266, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
@@ -1719,11 +1611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1400666542 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3439284841193489916, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-  m_PrefabInstance: {fileID: 921739122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1420447786 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7867806514055336439, guid: c7f013b373f630d43b7cc432320cc186, type: 3}
@@ -1767,11 +1654,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1797427062 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5020588005702351311, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-  m_PrefabInstance: {fileID: 921739122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1798198522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,11 +1917,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7f013b373f630d43b7cc432320cc186, type: 3}
---- !u!1 &1927706426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4221616583351780469, guid: 0232dea0c6bc0e749842afd5338db494, type: 3}
-  m_PrefabInstance: {fileID: 921739122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2015831606
 PrefabInstance:
   m_ObjectHideFlags: 0

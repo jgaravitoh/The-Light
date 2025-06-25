@@ -860,7 +860,7 @@ RectTransform:
   m_GameObject: {fileID: 8500123662692740830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 950}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.0032, y: 0.0031999997, z: 0.0032}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5621821829331049468}
@@ -1336,7 +1336,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8279710940864949039}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 67034474336936908, guid: c7186fc14aff35d4f90d9d84d0f98d43, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7186fc14aff35d4f90d9d84d0f98d43, type: 3}
@@ -1617,6 +1618,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5763171259878952894}
     m_Modifications:
+    - target: {fileID: 2912786260454143274, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_text
+      value: "\xBFEst\xE1 seguro que quiere dejar de usar su equipo?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6864873368158576059}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4486650722234202247}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveEvan
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TurnOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MakeEvanMove, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SimpleShowHidePanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593207844002198443, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5347712094090963637, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
       propertyPath: m_Name
       value: TurnOffWindow
@@ -1704,7 +1753,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4746496686504891011, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6864873368158576059}
+    - targetCorrespondingSourceObject: {fileID: 4746496686504891011, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4486650722234202247}
   m_SourcePrefab: {fileID: 100100000, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
 --- !u!224 &3203475183076788522 stripped
 RectTransform:
@@ -1716,3 +1771,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5347712094090963637, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
   m_PrefabInstance: {fileID: 8987723016354704735}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4423730967435149276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4746496686504891011, guid: 0e4ef9e296440264087c9c1faa5ee787, type: 3}
+  m_PrefabInstance: {fileID: 8987723016354704735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6864873368158576059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423730967435149276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32d0ba99f67b1f41882459fab694bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0, z: 3.5}
+  duration: 1
+  playerTransform: {fileID: 0}
+--- !u!114 &4486650722234202247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423730967435149276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca20337a769aaa48b95315895c4e506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appPanel: {fileID: 3930566766047430634}

@@ -32,7 +32,7 @@ public class DialogueSystemManager : MonoBehaviour
     void Start()
     {
         var service = new DialogueCSVDataService();
-        service.LoadDataAsync<DialogueTable>("Assets/Dialogue/DialoguesTest1.csv", false, (varTable) => //LOAD dialogue table
+        service.LoadDataAsync<DialogueTable>("Assets/CSV Files/DialoguesTest1.csv", false, (varTable) => //LOAD dialogue table
         {
             if (varTable == null)
             {
