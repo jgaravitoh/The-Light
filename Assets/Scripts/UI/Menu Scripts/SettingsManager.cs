@@ -104,6 +104,7 @@ public class SettingsManager : MonoBehaviour
         SetAntialiasingQuality(GetAntialiasingQuality());
         SetAntialiasingMSAAQuality(GetAntialiasingMSAAQuality());
         SetSoftShadowsState(GetSoftShadowsState());
+        
     }
 
 
@@ -610,13 +611,14 @@ public class SettingsManager : MonoBehaviour
         {
             dropdown.value = indexToSet.Value;
         }
-
-        Image dropdownImageComponent = dropdown.gameObject.GetComponent<Image>(); // Get the Image component for the dropdown background
-        TextMeshProUGUI dropdownLabelComponent = dropdown.gameObject.GetComponentInChildren<TextMeshProUGUI>(); // Get the TextMeshProUGUI component for the dropdown label
-        // Set the color with the specified alpha to indicate enabled or disabled state
-        dropdownImageComponent.color = new Color(dropdownImageComponent.color.r, dropdownImageComponent.color.g, dropdownImageComponent.color.b, colorAlpha);
-        dropdownLabelComponent.color = new Color(dropdownLabelComponent.color.r, dropdownLabelComponent.color.g, dropdownLabelComponent.color.b, colorAlpha);
-        dropdown.interactable = isEnabled; // Set the dropdown interactability
+        if (dropdown != null) {
+            Image dropdownImageComponent = dropdown.gameObject.GetComponent<Image>(); // Get the Image component for the dropdown background
+            TextMeshProUGUI dropdownLabelComponent = dropdown.gameObject.GetComponentInChildren<TextMeshProUGUI>(); // Get the TextMeshProUGUI component for the dropdown label
+                                                                                                                    // Set the color with the specified alpha to indicate enabled or disabled state
+            dropdownImageComponent.color = new Color(dropdownImageComponent.color.r, dropdownImageComponent.color.g, dropdownImageComponent.color.b, colorAlpha);
+            dropdownLabelComponent.color = new Color(dropdownLabelComponent.color.r, dropdownLabelComponent.color.g, dropdownLabelComponent.color.b, colorAlpha);
+            dropdown.interactable = isEnabled; // Set the dropdown interactability
+        }
     }
     private void EnableDropdown(TMP_Dropdown dropdown, int? indexToSet = null)
     {
