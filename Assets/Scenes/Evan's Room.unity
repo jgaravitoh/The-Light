@@ -1059,6 +1059,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1374381136086571889, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1353241036}
+    - target: {fileID: 1374381136086571889, guid: e7ceeff825107354098b107360646bf3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenHistoryPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 2727459445038973069, guid: e7ceeff825107354098b107360646bf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6245,6 +6253,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1353241036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1708271076801588699, guid: 2138e3fdeceea3f4393761d5b55bfcbd, type: 3}
+  m_PrefabInstance: {fileID: 716238140}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d1a7a05a57abf4b86f1fe712bf4c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1418792324

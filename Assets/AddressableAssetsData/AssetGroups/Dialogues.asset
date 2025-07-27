@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: caa3b1d75f763df4cbcc0cacbc972046
   m_SerializeEntries:
   - m_GUID: 658c72811b24dfb41b948b2916f88568
-    m_Address: Assets/Dialogue/DialoguesTest1.csv
+    m_Address: Assets/CSV Files/DialoguesTest1.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
