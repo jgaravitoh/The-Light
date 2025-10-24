@@ -1,20 +1,3 @@
-﻿id,separator,character name,dialogues(different options for example),color name,color dialogue,speed dialogue,image name
-0,test1 conversation,Meow,START Test dialogue id 0 ,#eb9534,#d1d1d1,0.001,n/a
-1,,Meow,NEVER GONNA GIVE YOUU UPPPP,#eb9534,#d1d1d2,0.05,n/a
-2,,Meow,NEVER GONNA LET YOU DOWN,#c334eb,#d1d1d3,0.1,n/a
-3,,Sarade,Pene,#34eb89,#d1d1d6,0.1,n/a
-4,,Sarade,I AM NOT THROWING AWAY MY SHOT,#eb9534,#d1d1d2,0.12387619,n/a
-5,,Meow,I'm waving through a window,#ebd334,#d1d1d5,0.05,n/a
-6,,Sarade,I try to speak but nobody can hear,#34eb89,#d1d1d6,0.1,n/a
-7,,Meow,Test dialogue id ,#34e5eb,#d1d1d7,0.089933333,n/a
-8,,Sarade,"¡Probando! ñ, canción, turururuuru ^^ |  ( ) @#%$*-_+=/~~``.",#34eb89,#d1d1d6,0.1,n/a
-9,test1 conversation,Meow,END Test dialogue id ,#eb3499,#d1d1d8,0.101247619,n/a
-10,test2 singular dialogue,Sarade,Este dialogo es único y solo se reproducirá este gracias al sistema de dialogos,#34eb89,#d1d1d6,0.1,n/a
-11,test3 mostrando flexibilidad,Sarade,"Este dialogo es crea, lo guardo en el archivo, y ya es detectable por el sistema",#34eb89,#d1d1d6,0.1,n/a
-12,Evan's Nightmare,Evan,Oh…,#ffffff,#ffffff,0.05,n/a
-13,Evan's Nightmare,Evan,Fue solo un sueño.,#ffffff,#ffffff,0.05,n/a
-14,Evan's Mirror 1,Evan,Nada interesante que ver en el espejo…,#ffffff,#ffffff,0.05,n/a
-15,Evan's Mirror 2,Evan,Solo alguien que no brilla y tampoco logra sus sueños…,#ffffff,#ffffff,0.05,n/a
-16,Evan's Mirror 3,Evan,¿Hay sentido en todo esto?,#ffffff,#ffffff,0.05,n/a
-17,Evan's Mirror 4,Evan,¿Qué estoy haciendo con mi vida?,#ffffff,#ffffff,0.05,n/a
-,,,,,,,
+id,title,lede,template,slot1_options,slot1_viral_index,slot2_options,slot2_viral_index,slot3_options,slot3_viral_index,tags
+1,Medianoche de fuego,"Sirenas, humo y rumores.","Cuando el reloj cayó en seco, las sirenas reventaron el silencio y, en minutos, el centro se convirtió en un tablero de nervios. Testigos aseguran que estalló una {1}. A pocas cuadras, la policía avanzó con altavoces mientras una {2} encendía el rumor de que 'esto no fue casualidad'. Al amanecer comenzó una {3} de responsables.",MASACRE|incidente|contingencia,0,TURBA DESENFRENADA|multitud|vecinos alarmados,0,CACERÍA|investigación|auditoría independiente,0,neopolis;violencia;sátira
+2,La ciudad de los rumores,"Un corte, mil teor��as.","En tres barrios a la vez las luces parpadearon y el miedo corrió más rápido que los generadores. En minutos, los hilos hablaron de un {1}, los rooftops grabaron una {2} y los portales exigieron una {3}.",COLAPSO TOTAL|fallo eléctrico|interrupción temporal,0,HISTERIA COLECTIVA|vecinos en alerta|transeúntes preocupados,0,PURGA URBANA|revisión técnica|auditoría pública,0,energía;redes;sátira

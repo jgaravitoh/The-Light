@@ -29,9 +29,11 @@ public class CameraTriggerVolume : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Entered Camera Trigger Volume");
         if (other.gameObject.CompareTag("Player"))
         {
-            if (CameraSwitcher.activeCamera != cam) CameraSwitcher.SwitchCamera(cam);
+            Debug.Log("Entered Camera Trigger Volume");
+            if (CameraSwitcher.activeCamera != cam) CameraSwitcher.SwitchCamera(cam); Debug.Log(cam.Name); 
             if (restrictMovement) PlayerMovement.sharedInstancePlayerMovement.allowMovement = false;
         }
     }

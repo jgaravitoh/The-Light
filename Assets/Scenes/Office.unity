@@ -745,7 +745,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: -1.8989525, z: 0}
-  m_LocalScale: {x: 0.31040236, y: 1, z: 4.1946287}
+  m_LocalScale: {x: 0.79, y: 1, z: 4.64}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2033116313}
@@ -1241,6 +1241,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2396491223368882426, guid: 7ad5ae970cd532e409e5f6ad37a80a19, type: 3}
   m_PrefabInstance: {fileID: 3045940738918627452}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &520513381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 520513384}
+  - component: {fileID: 520513383}
+  - component: {fileID: 520513382}
+  m_Layer: 0
+  m_Name: ARTICLE MANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &520513382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520513381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c3b3c4d8cc06547acfe45b70816d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::test1ARTICLELOADING
+--- !u!114 &520513383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520513381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ae9857d8d8e42468383668a7473777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArticleSystemManager
+--- !u!4 &520513384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520513381}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -43.27536, y: -10.57, z: 98.32639}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &531428041
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,7 +2329,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 2.1180477, z: 0}
-  m_LocalScale: {x: 0.31040236, y: 1, z: 4.1946287}
+  m_LocalScale: {x: 0.79, y: 1, z: 4.64}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2033116313}
@@ -2626,7 +2683,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 1.9469986, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.31040236, y: 1, z: 4.1946287}
+  m_LocalScale: {x: 0.79, y: 1, z: 4.64}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2033116313}
@@ -2750,6 +2807,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 512243689214511533, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 972643649738694352, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
       propertyPath: m_RenderMode
       value: 0
@@ -2769,6 +2830,12 @@ PrefabInstance:
     - target: {fileID: 1038737732595113481, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
       propertyPath: m_ReferenceResolution.y
       value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120326510415902560, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
+      propertyPath: m_Text
+      value: "IBA POR ORO Y RECIBI\xD3 PLOMO\n\n\nXXXXXX y su complice no contaban
+        con que la victima del atraco que iban\na cometer seria un policia, y que
+        en su reacci\xF3n, uno de ellos moriria.\nEl uniformado tambien resulto herido."
       objectReference: {fileID: 0}
     - target: {fileID: 2002534527533427946, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
       propertyPath: m_IsActive
@@ -2792,7 +2859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4011484847733064282, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089296388402154911, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4342519462173784684, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
       propertyPath: m_IsActive
@@ -2850,6 +2921,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 'ERROR: DEBES SEGUIR TRABAJANDO'
       objectReference: {fileID: 0}
+    - target: {fileID: 6248255203846192529, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 04018d944261a774c93d0ca02c62271d, type: 3}
     - target: {fileID: 6998621378538641944, guid: 31820b27a01ff4f4f8436acb1a45f14a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3219,7 +3294,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.31040236, y: 1, z: 4.1946287}
+  m_LocalScale: {x: 1, y: 1, z: 4.1946287}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2033116313}
@@ -4447,7 +4522,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.31040236, y: 1, z: 4.1946287}
+  m_LocalScale: {x: 1, y: 1, z: 4.1946287}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2033116313}
@@ -5664,10 +5739,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 867051511}
-  - {fileID: 1368048687}
   - {fileID: 2137057393}
   - {fileID: 833061660}
   - {fileID: 877552900}
+  - {fileID: 1368048687}
   - {fileID: 62842468}
   - {fileID: 977951991}
   - {fileID: 1555976022}
@@ -6137,7 +6212,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -1.9410019, y: 0.05000019, z: 0}
-  m_LocalScale: {x: 0.31040236, y: 1, z: 4.1946287}
+  m_LocalScale: {x: 0.79, y: 1, z: 4.64}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2033116313}
@@ -6319,3 +6394,4 @@ SceneRoots:
   - {fileID: 2033116313}
   - {fileID: 1506273967}
   - {fileID: 616054541}
+  - {fileID: 520513384}

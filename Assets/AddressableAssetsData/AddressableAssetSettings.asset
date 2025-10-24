@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 2c82d62fc245fa24096f60d9cb624c24
   m_currentHash:
     serializedVersion: 2
-    Hash: f8a97d1bf019c6d4ef477b9d0dbdbdf0
+    Hash: 1665bfb63c6d5480ab0d3211f3107c13
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -33,6 +33,7 @@ MonoBehaviour:
   m_UniqueBundleIds: 0
   m_EnableJsonCatalog: 0
   m_NonRecursiveBuilding: 1
+  m_AllowNestedBundleFolders: 0
   m_CCDEnabled: 0
   m_maxConcurrentWebRequests: 3
   m_UseUWRForLocalBundles: 0
@@ -60,6 +61,7 @@ MonoBehaviour:
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
   - {fileID: 11400000, guid: 53863332da998bd4d9c595b433f35868, type: 2}
+  - {fileID: 11400000, guid: 81d81d961aa4bc946a60ce07b762c04d, type: 2}
   - {fileID: 11400000, guid: 11bd42588f5b6c54da0f3ae6ae3d9098, type: 2}
   - {fileID: 11400000, guid: 6e28e97372c8c1546991d97a1440dc3c, type: 2}
   m_BuildSettings:
