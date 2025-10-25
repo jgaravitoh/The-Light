@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-
+using System;
 public class DialogueSystemManager : MonoBehaviour
 {
     [SerializeField]
@@ -14,6 +14,7 @@ public class DialogueSystemManager : MonoBehaviour
     Dialogue currentDialogueObject;
     DialogueHistorySystemManager dialogueHistoryManager;
 
+
     public static DialogueSystemManager sharedInstanceDialogueManager;
 
     //public Dialogue CurrentDialogueObject { get => currentDialogueObject; set => currentDialogueObject = value; }
@@ -21,6 +22,16 @@ public class DialogueSystemManager : MonoBehaviour
     public int globalDialogueID;
     public string globalSeparator = string.Empty;
     public bool globalSeparatorFlag = false;
+
+    // --- Eventos públicos ---
+    public static event Action DialogueEnded;                       // Se dispara al terminar una secuencia de diálogo
+    public static event Action DialogueTableReady;
+    private static bool _isDialogueTableReady = false;
+    public static bool IsDialogueTableReady => _isDialogueTableReady;
+
+
+
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -41,7 +52,14 @@ public class DialogueSystemManager : MonoBehaviour
             }
             dialogueTable = varTable;
         });
-        
+
+        // === Dispara el evento one-shot (sin payload) ===
+        if (!_isDialogueTableReady)
+        {
+            _isDialogueTableReady = true;
+            DialogueTableReady?.Invoke();
+        }
+
         dialogueHistoryManager = GameObject.Find("DialogueHistoryManagerV2").GetComponent<DialogueHistorySystemManager>(); // Gets reference of Dialogue History Manager. (duh)
     }
 
@@ -49,6 +67,7 @@ public class DialogueSystemManager : MonoBehaviour
     {
 
         PlayerMovement.sharedInstancePlayerMovement.allowMovement = false;
+        /*
         Debug.Log(dialogueTable.Dialogues[0]);
         Debug.Log(dialogueTable.Separators.Length);
         Debug.Log(dialogueTable.CharacterNames.Length);
@@ -62,6 +81,7 @@ public class DialogueSystemManager : MonoBehaviour
                                      dialogueTable.CharacterNames[id]+ dialogueTable.Dialogues[id]+
                                      dialogueTable.ColorNames[id]+ dialogueTable.ColorDialogues[id]+
                                      dialogueTable.SpeedDialogues[id]+ dialogueTable.ImageNames[id]);
+        */
         // Display the dialogue system (if it was previously off).
         DialogueCanva.SetActive(true);
         
@@ -175,5 +195,6 @@ public class DialogueSystemManager : MonoBehaviour
 
         PlayerMovement.sharedInstancePlayerMovement.allowMovement = true;
         StopAllCoroutines();
+        DialogueEnded?.Invoke(); // <-- agregar
     }
 }
