@@ -1,15 +1,14 @@
-using NUnit.Framework;
-using System;
+Ôªøusing System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
 public class ArticleSystemManager : MonoBehaviour
 {
     // Variables para el minijuego
-    
     [SerializeField] private List<Button> buttonList;
     [SerializeField] private TMP_InputField minigameText;
     [SerializeField] private GameObject minigameButtonsUI;
@@ -17,28 +16,35 @@ public class ArticleSystemManager : MonoBehaviour
     [SerializeField] private GameObject minigameMakeTimePassPanel;
     [SerializeField] private GameObject computerPanel;
     [SerializeField] private GameObject computerCameraZone;
-    private int DIALOGUE_EVAN_MISTAKE_SELECTION = 18;
-    private int DIALOGUE_EVAN_WANTS_TO_GO_HOME_SEQUENCE = 19;
+
+    private const int DIALOGUE_EVAN_MISTAKE_SELECTION = 18;
+    private const int DIALOGUE_EVAN_WANTS_TO_GO_HOME_SEQUENCE = 19;
+    private const int ARTICLES_MAXIMUM_TO_WRITE = 3;
+
     private int minigameArticlesWritten = 0;
     private int[] randomizedArticleIndexes;
-    private int  ARTICLES_MAXIMUM_TO_WRITE = 3;
 
     private int[] _currentOptionIndexByButton;
     private int _currentCorrectButtonSlot = -1;
+
     // STATE FOR OPTION SELECTION
     private bool _awaitingSelection = false;
     private string _selectedOptionText = null;
 
-
     // Variables para eventos y control de estados
     private bool _subscribedToTable = false;
-    private bool _subscribedToDialogue = false;        // ya lo usas para DialogueEnded
-    private bool _subscribedToDialogueReady = false;   // 
+    private bool _subscribedToDialogue = false;        // DialogueEnded
+    private bool _subscribedToDialogueReady = false;   // DialogueTableReady
 
     private bool _articlesReady = false;
     private bool _dialoguesReady = false;
     private bool _minigameStarted = false;            // one-shot
+    private bool _tutorialEnded = false;              // ‚Üê se pondr√° en true desde NotifyTutorialEnded()
 
+    // Prop opcional por si quieres consultarlo desde fuera
+    public bool TutorialEnded => _tutorialEnded;
+
+    public GameObject afterMinigameHitboxDialogue, afterMinigameHitboxLoadScene;
 
     #region Loading CSV ARTICLE DATA
     // --- Singleton ---
@@ -58,7 +64,6 @@ public class ArticleSystemManager : MonoBehaviour
 
     // Fired when the CSV is loaded and parsed successfully.
     public static event Action<ArticleTable> TableLoaded;
-
 
     private void Awake()
     {
@@ -125,14 +130,14 @@ public class ArticleSystemManager : MonoBehaviour
     //----------------------- MINIGAME LOGIC -----------------------//
     private void OnEnable()
     {
-        // Eval˙a estados actuales
+        // Eval√∫a estados actuales
         _articlesReady = (Table != null);
         _dialoguesReady = DialogueSystemManager.IsDialogueTableReady;
 
         // Suscripciones solo si falta algo
         if (!_articlesReady && !_subscribedToTable)
         {
-            TableLoaded += OnArticleTableLoaded; // puedes reutilizar tu OnTableLoaded existente si quieres
+            TableLoaded += OnArticleTableLoaded;
             _subscribedToTable = true;
         }
         if (!_dialoguesReady && !_subscribedToDialogueReady)
@@ -141,16 +146,17 @@ public class ArticleSystemManager : MonoBehaviour
             _subscribedToDialogueReady = true;
         }
 
-        // Seguir escuchando cierre de di·logos (lo que ya tenÌas)
+        // Seguir escuchando cierre de di√°logos
         if (!_subscribedToDialogue)
         {
             DialogueSystemManager.DialogueEnded += OnDialogueEnded;
             _subscribedToDialogue = true;
         }
 
-        // Intento inicial por si ambas ya estaban listas
+        // Intento inicial por si todo ya estaba listo (art√≠culos + di√°logos + tutorial)
         TryStartMinigameIfReady();
     }
+
     private void OnDisable()
     {
         if (_subscribedToTable)
@@ -169,19 +175,39 @@ public class ArticleSystemManager : MonoBehaviour
             _subscribedToDialogue = false;
         }
     }
-    // --- NUEVO: punto ˙nico para arrancar de forma segura ---
-    private void TryStartMinigameIfReady()
+
+    /// <summary>
+    /// Punto √∫nico para arrancar de forma segura el minijuego.
+    /// Solo empieza si:
+    /// - art√≠culos listos,
+    /// - di√°logos listos,
+    /// - tutorial terminado,
+    /// - y a√∫n no se ha iniciado antes.
+    /// </summary>
+    public void TryStartMinigameIfReady()
     {
         if (_minigameStarted) return;                  // one-shot
         if (!_articlesReady || !_dialoguesReady) return;
+        if (!_tutorialEnded) return;                   // requiere que el tutorial haya terminado
 
         ResetMinigame();
         StartMinigame();
         _minigameStarted = true;                       // evita dobles arranques
     }
 
+    /// <summary>
+    /// Llama esto desde cualquier otro script cuando el tutorial haya terminado.
+    /// Ejemplo: ArticleSystemManager.Instance.NotifyTutorialEnded();
+    /// </summary>
+    public void NotifyTutorialEnded()
+    {
+        if (_tutorialEnded) return;        // ya se notific√≥ antes
+
+        _tutorialEnded = true;
+        TryStartMinigameIfReady();
+    }
+
     #region Events: OnArticleTableLoaded, OnDialogueTableReady & OnDialogueEnded
-    // Handlers: solo marcan flag + prueban arrancar + desuscriben one-shot
     private void OnArticleTableLoaded(ArticleTable _)
     {
         _articlesReady = true;
@@ -203,16 +229,17 @@ public class ArticleSystemManager : MonoBehaviour
         }
         TryStartMinigameIfReady();
     }
-    private void OnDialogueEnded() // <-- agregar
+
+    private void OnDialogueEnded()
     {
-        // LÛgica a ejecutar cuando el di·logo termina
+        // L√≥gica a ejecutar cuando el di√°logo termina
         minigameWrongAnswerPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
     }
     #endregion
+
     public void ResetMinigame()
     {
-
         // Agarrar botones y zonas de texto para reiniciar
         foreach (Button button in buttonList)
         {
@@ -220,7 +247,7 @@ public class ArticleSystemManager : MonoBehaviour
             TMP_Text tmp = button.GetComponentInChildren<TMP_Text>(true);
             if (tmp != null)
             {
-                tmp.text = string.Empty; 
+                tmp.text = string.Empty;
                 continue;
             }
 
@@ -240,11 +267,11 @@ public class ArticleSystemManager : MonoBehaviour
 
     public void StartMinigame()
     {
-        // Hacer la selecciÛn aleatoria del orden de los artÌculos (FisherñYates)
+        // Hacer la selecci√≥n aleatoria del orden de los art√≠culos (Fisher‚ÄìYates)
         int articlesAmmount = Table.Ids.Length;
         if (articlesAmmount == 0)
         {
-            Debug.LogError("No hay artÌculos disponibles para el minijuego.");
+            Debug.LogError("No hay art√≠culos disponibles para el minijuego.");
             return;
         }
         randomizedArticleIndexes = new int[articlesAmmount];
@@ -259,14 +286,10 @@ public class ArticleSystemManager : MonoBehaviour
             randomizedArticleIndexes[j] = tmp;
         }
         minigameArticlesWritten = 0;
-        StartCoroutine(ArticleTyper(0.02f));   
-        // Comenzar a escribir el artÌcuo
+        StartCoroutine(ArticleTyper(0.02f));
+        // Comenzar a escribir el art√≠culo
     }
 
-    // HACER UNA CORRUTINA QUE ESCRIBE CARACTER POR CARACTER EL ARTÕCULO EN EL TEXT AREA, SI TAN SOLO TUVIERA UNA
-
-    // Hacer la selecciÛn aleatoria del orden de las opciones cuando se llegue al momento de la opciÛn
-    // Asignarlas a los botones d·ndole un valor de verdad
     IEnumerator ArticleTyper(float characterTypingDelay)
     {
 
@@ -277,11 +300,11 @@ public class ArticleSystemManager : MonoBehaviour
         string title = Table.Titles[currentIndex];
         string template = Table.Templates[currentIndex];
 
-        // ConstrucciÛn progresiva
+        // Construcci√≥n progresiva
         string constructedArticle = "";
         minigameText.caretPosition = 0;
 
-        // --- TÌtulo (igual que lo tenÌas) ---
+        // --- T√≠tulo ---
         for (int i = 0; i < title.Length; i++)
         {
             if (title[i] != ' ')
@@ -306,10 +329,10 @@ public class ArticleSystemManager : MonoBehaviour
                     string token = template.Substring(i + 1, close - i - 1);
                     if (int.TryParse(token, out int slot) && slot >= 1)
                     {
-                        // Pausar escritura y esperar selecciÛn correcta para este slot
+                        // Pausar escritura y esperar selecci√≥n correcta para este slot
                         yield return StartCoroutine(WaitForCorrectSelection(currentIndex, slot));
 
-                        // Escribir el texto elegido en el artÌculo
+                        // Escribir el texto elegido en el art√≠culo
                         if (!string.IsNullOrEmpty(_selectedOptionText))
                         {
                             foreach (char ch in _selectedOptionText)
@@ -337,11 +360,10 @@ public class ArticleSystemManager : MonoBehaviour
             minigameText.text = constructedArticle;
         }
 
-        // Fin del artÌculo
+        // Fin del art√≠culo
         minigameArticlesWritten += 1;
         if (minigameArticlesWritten < ARTICLES_MAXIMUM_TO_WRITE)
         {
-            
             minigameMakeTimePassPanel.SetActive(true);
             yield return new WaitForSeconds(2.5f);
             minigameText.text = "";
@@ -355,27 +377,28 @@ public class ArticleSystemManager : MonoBehaviour
             StopMinigame();
         }
     }
-    // Espera hasta que el jugador seleccione la opciÛn correcta del slot {slot}
+
+    // Espera hasta que el jugador seleccione la opci√≥n correcta del slot {slot}
     IEnumerator WaitForCorrectSelection(int articleId, int slot)
     {
         string[] options = Table.GetSlotOptions(articleId, slot);
         if (options == null || options.Length == 0)
         {
-            Debug.LogError($"No hay opciones para el slot {{{slot}}} del artÌculo {articleId}.");
+            Debug.LogError($"No hay opciones para el slot {{{slot}}} del art√≠culo {articleId}.");
             yield break;
         }
 
-        int correctIndex = Table.GetViralIndex(articleId, slot); // "correcta" = la m·s amarillista/viral
+        int correctIndex = Table.GetViralIndex(articleId, slot); // "correcta" = la m√°s amarillista/viral
         if (correctIndex < 0 || correctIndex >= options.Length)
         {
-            Debug.LogWarning($"Õndice viral inv·lido para slot {{{slot}}}. Se tomar· 0 por defecto.");
+            Debug.LogWarning($"√çndice viral inv√°lido para slot {{{slot}}}. Se tomar√° 0 por defecto.");
             correctIndex = 0;
         }
 
         // Preparar botones
         SetupOptionButtonsRandomized(options, correctIndex);
 
-        // Mostrar UI de botones y esperar a la elecciÛn correcta
+        // Mostrar UI de botones y esperar a la elecci√≥n correcta
         _selectedOptionText = null;
         _awaitingSelection = true;
         minigameButtonsUI.SetActive(true);
@@ -413,7 +436,7 @@ public class ArticleSystemManager : MonoBehaviour
         }
         if (buttonList == null || buttonList.Count == 0)
         {
-            Debug.LogError("buttonList est· vacÌo: asigna los botones en el Inspector.");
+            Debug.LogError("buttonList est√° vac√≠o: asigna los botones en el Inspector.");
             return;
         }
 
@@ -432,7 +455,7 @@ public class ArticleSystemManager : MonoBehaviour
             (wrong[i], wrong[j]) = (wrong[j], wrong[i]);
         }
 
-        // SelecciÛn final: siempre incluye la correcta + (uiCount-1) incorrectas
+        // Selecci√≥n final: siempre incluye la correcta + (uiCount-1) incorrectas
         int[] selected = new int[uiCount];
         selected[0] = correctIndex;
         for (int i = 1; i < uiCount; i++) selected[i] = wrong[i - 1];
@@ -465,12 +488,11 @@ public class ArticleSystemManager : MonoBehaviour
                 // 1) Primero el "tick" interno (reanuda la corrutina)
                 btn.onClick.AddListener(() =>
                 {
-                    // Si quieres, tambiÈn puedes guardar exactamente el texto mostrado:
                     _selectedOptionText = options[optionIdx];
                     _awaitingSelection = false;
                 });
 
-                // 2) DespuÈs el listener que pediste explÌcitamente
+                // 2) Despu√©s el listener que pediste expl√≠citamente
                 btn.onClick.AddListener(CorrectAnswerButton);
             }
             else
@@ -480,8 +502,7 @@ public class ArticleSystemManager : MonoBehaviour
         }
     }
 
-
-    // Pone el texto del botÛn (TMP o Text cl·sico)
+    // Pone el texto del bot√≥n (TMP o Text cl√°sico)
     private void SetButtonLabel(Button button, string text)
     {
         var tmp = button.GetComponentInChildren<TMP_Text>(true);
@@ -510,14 +531,16 @@ public class ArticleSystemManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
     }
 
-    public void StopMinigame() {
+    public void StopMinigame()
+    {
         ResetMinigame();
         computerCameraZone.SetActive(false);
+        afterMinigameHitboxDialogue.SetActive(true);
+        afterMinigameHitboxLoadScene.SetActive(true);
         gameObject.GetComponent<MakeEvanMove>().MoveEvan();
-        
+
         PlayerMovement.sharedInstancePlayerMovement.allowMovement = true;
         DialogueSystemManager.sharedInstanceDialogueManager.LoadDialogue(DIALOGUE_EVAN_WANTS_TO_GO_HOME_SEQUENCE);
         computerPanel.SetActive(false);
     }
-
 }

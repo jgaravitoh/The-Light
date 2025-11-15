@@ -8,12 +8,21 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/First Tests Scenes Sarade/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/First Tests Scenes Sarade/fuego.unity
     guid: 30d3bfea8e4f14948af05fa3bc9623d1
   - enabled: 1
     path: Assets/Scenes/Evan's Room.unity
     guid: bd49c6298c35e6a418c327f5cfdf2537
+  - enabled: 1
+    path: Assets/Scenes/Evan's Room PostWork.unity
+    guid: 257f6b518fe119a44bf9a4e220c16471
+  - enabled: 1
+    path: Assets/Scenes/Evan's Room Mediano.unity
+    guid: 41cf2e19b01e55e40816a0686908e2a3
+  - enabled: 1
+    path: Assets/Scenes/Evan's Room No dialogo inicio.unity
+    guid: 2de02c9ded3503942bf6f8184c6d1b0e
   - enabled: 0
     path: Assets/Scenes/Settings Tests/URP testing options base.unity
     guid: 9cb9a9f445904d94bb727c4afd9e066d

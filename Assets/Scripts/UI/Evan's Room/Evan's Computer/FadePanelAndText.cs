@@ -10,10 +10,14 @@ public class FadePanelAndText : MonoBehaviour
     public List<TextMeshProUGUI> panelTexts; // Now supports multiple texts
     public float fadeDurationPanel = 1f, fadeDurationText = 1f;
     public int hoursAdded = 3;
+    public bool startOnEnable = true;
 
     private void OnEnable()
     {
-        FadePanelAndTextSequence();
+        if (startOnEnable)
+        {
+            FadePanelAndTextSequence();
+        }
     }
 
     public void FadePanelAndTextSequence()

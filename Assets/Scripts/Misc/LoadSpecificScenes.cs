@@ -1,21 +1,45 @@
+using System.Collections;
 using UnityEngine;
 
 public class LoadSpecificScenes : MonoBehaviour
 {
+    [SerializeField] private bool waitBeforeLoading = false;
+    [SerializeField] private float waitTime = 0f;
     public void LoadStreetScene()
     {
-        SimpleSceneLoader.SceneLoadByName("Calle");
+        StartCoroutine(LoadNewScene("Calle"));
     }
     public void LoadOfficeScene()
     {
-        SimpleSceneLoader.SceneLoadByName("Office");
+        StartCoroutine(LoadNewScene("Office"));
     }
     public void LoadGuitarScene()
     {
-        SimpleSceneLoader.SceneLoadByName("Guitar Thing");
+        StartCoroutine(LoadNewScene("Guitar Thing"));
     }
     public void LoadRoomScene()
     {
-        SimpleSceneLoader.SceneLoadByName("Evan's Room");
+        StartCoroutine(LoadNewScene("Evan's Room"));
     }
+    public void LoadEvanRoomAfterGuitar()
+    {
+        StartCoroutine(LoadNewScene("Evan's Room No dialogo inicio"));
+    }
+    public void LoadEvanRoomAfterOffice()
+    {
+        StartCoroutine(LoadNewScene("Evan's Room PostWork"));
+    }
+    public void LoadEvanRoomMediano()
+    {
+        StartCoroutine(LoadNewScene("Evan's Room Mediano"));
+    }
+
+    public IEnumerator LoadNewScene(string sceneName)
+    {
+        if (waitBeforeLoading) yield return new WaitForSeconds(waitTime);
+        SimpleSceneLoader.SceneLoadByName(sceneName);
+    }
+
+    
+
 }

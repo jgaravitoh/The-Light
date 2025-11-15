@@ -1,200 +1,247 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using TMPro;
 using System;
+
 public class DialogueSystemManager : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI dialogueSystemText, characterNameText;
+
     [SerializeField]
     private GameObject triangleImage, continueDialogueButton, DialogueCanva;
+
     [SerializeField]
-    [TextArea(5, 15)]
     private bool continueDialogueBool = false;
+
     Dialogue currentDialogueObject;
     DialogueHistorySystemManager dialogueHistoryManager;
 
-
     public static DialogueSystemManager sharedInstanceDialogueManager;
 
-    //public Dialogue CurrentDialogueObject { get => currentDialogueObject; set => currentDialogueObject = value; }
     public DialogueTable dialogueTable;
     public int globalDialogueID;
     public string globalSeparator = string.Empty;
-    public bool globalSeparatorFlag = false;
 
-    // --- Eventos p�blicos ---
-    public static event Action DialogueEnded;                       // Se dispara al terminar una secuencia de di�logo
-    public static event Action DialogueTableReady;
+    // --- Eventos públicos ---
+    public static event Action DialogueEnded;            // Se dispara al terminar una secuencia de diálogo
+    public static event Action DialogueTableReady;       // Se dispara cuando la tabla de diálogos está lista
+
     private static bool _isDialogueTableReady = false;
     public static bool IsDialogueTableReady => _isDialogueTableReady;
-
-
-
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+
         if (sharedInstanceDialogueManager == null)
         {
             sharedInstanceDialogueManager = this;
         }
     }
+
     void Start()
     {
         var service = new DialogueCSVDataService();
-        service.LoadDataAsync<DialogueTable>("Assets/CSV Files/DialoguesTest1.csv", false, (varTable) => //LOAD dialogue table
-        {
-            if (varTable == null)
+
+        // Carga asíncrona de la tabla de diálogos
+        service.LoadDataAsync<DialogueTable>(
+            "Assets/CSV Files/DialoguesTest1.csv",
+            false,
+            (varTable) =>
             {
-                Debug.LogError("Could not load dialogue.");
-                return;
-            }
-            dialogueTable = varTable;
-        });
+                if (varTable == null)
+                {
+                    Debug.LogError("Could not load dialogue.");
+                    return;
+                }
 
-        // === Dispara el evento one-shot (sin payload) ===
-        if (!_isDialogueTableReady)
+                dialogueTable = varTable;
+
+                // Marca la tabla como lista y lanza el evento una sola vez
+                if (!_isDialogueTableReady)
+                {
+                    _isDialogueTableReady = true;
+                    DialogueTableReady?.Invoke();
+                }
+            });
+
+        // Intenta obtener el gestor de historial de diálogos
+        try
         {
-            _isDialogueTableReady = true;
-            DialogueTableReady?.Invoke();
+            dialogueHistoryManager = GameObject
+                .Find("DialogueHistoryManagerV2")
+                .GetComponent<DialogueHistorySystemManager>();
         }
-
-        dialogueHistoryManager = GameObject.Find("DialogueHistoryManagerV2").GetComponent<DialogueHistorySystemManager>(); // Gets reference of Dialogue History Manager. (duh)
+        catch (Exception ex)
+        {
+            Console.WriteLine("Nothing to worry about, dialogue history manager just not present: " + ex.Message);
+        }
     }
 
     public void LoadDialogue(int id)
     {
-
         PlayerMovement.sharedInstancePlayerMovement.allowMovement = false;
-        /*
-        Debug.Log(dialogueTable.Dialogues[0]);
-        Debug.Log(dialogueTable.Separators.Length);
-        Debug.Log(dialogueTable.CharacterNames.Length);
-        Debug.Log(dialogueTable.Dialogues.Length);
-        Debug.Log(dialogueTable.ColorNames.Length);
-        Debug.Log(dialogueTable.ColorDialogues.Length);
-        Debug.Log(dialogueTable.SpeedDialogues.Length);
-        Debug.Log(dialogueTable.ImageNames.Length);
-        Debug.Log(dialogueTable.Ids.Length);
-        Debug.Log(dialogueTable.Ids[id]+dialogueTable.Separators[id]+
-                                     dialogueTable.CharacterNames[id]+ dialogueTable.Dialogues[id]+
-                                     dialogueTable.ColorNames[id]+ dialogueTable.ColorDialogues[id]+
-                                     dialogueTable.SpeedDialogues[id]+ dialogueTable.ImageNames[id]);
-        */
-        // Display the dialogue system (if it was previously off).
+
+        // Mostrar el canvas de diálogo
         DialogueCanva.SetActive(true);
-        
+
         setActiveTriangle(false);
         globalDialogueID = id;
-        globalSeparator = (globalSeparator == string.Empty) ? dialogueTable.Separators[id] : globalSeparator; //Check if the separator has been asigned, if not, assign it.
 
-        // Calls the typer coroutine.
-        StartCoroutine(DialogueTyper(dialogueTable.Separators[id], 
-                                     dialogueTable.CharacterNames[id], dialogueTable.Dialogues[id], 
-                                     dialogueTable.ColorNames[id], dialogueTable.ColorDialogues[id], 
-                                     dialogueTable.SpeedDialogues[id], dialogueTable.ImageNames[id]));
-}
+        // Si aún no se ha asignado separador global, usar el del primer diálogo
+        if (string.IsNullOrEmpty(globalSeparator))
+        {
+            globalSeparator = dialogueTable.Separators[id];
+        }
 
-    IEnumerator DialogueTyper(string separator, string characterName, string dialogueText, string colorName, string colorDialogue, float speedDialogue, string imageName)
+        // Inicia la corrutina del tipeo
+        StartCoroutine(DialogueTyper(
+            dialogueTable.Separators[id],
+            dialogueTable.CharacterNames[id],
+            dialogueTable.Dialogues[id],
+            dialogueTable.ColorNames[id],
+            dialogueTable.ColorDialogues[id],
+            dialogueTable.SpeedDialogues[id],
+            dialogueTable.ImageNames[id]
+        ));
+    }
+
+    IEnumerator DialogueTyper(
+        string separator,
+        string characterName,
+        string dialogueText,
+        string colorName,
+        string colorDialogue,
+        float speedDialogue,
+        string imageName)
     {
-        // Loads name and properties of text to the dialogue system.
-        UnityEngine.Color colorParsed;
-        UnityEngine.ColorUtility.TryParseHtmlString(colorName, out colorParsed);
+        // Configurar nombre de personaje y colores
+        Color colorParsed;
+
+        ColorUtility.TryParseHtmlString(colorName, out colorParsed);
         characterNameText.color = colorParsed;
         characterNameText.SetText(characterName);
 
-        UnityEngine.ColorUtility.TryParseHtmlString(colorDialogue, out colorParsed);
+        ColorUtility.TryParseHtmlString(colorDialogue, out colorParsed);
         dialogueSystemText.color = colorParsed;
 
-        // Create the string we are going to build progressively
+        // Construir el texto progresivamente
         string constructedDialogue = "";
 
-        // Iterate for every character of the Dialogue.
-        for (int i = 0; i < dialogueText.Length; i++) 
+        for (int i = 0; i < dialogueText.Length; i++)
         {
-            if (dialogueText[i] != char.Parse(" ")) // Only wait time if theres a symbol different from whitespaces.
+            if (dialogueText[i] != ' ') // Solo esperar si no es espacio
             {
                 yield return new WaitForSeconds(speedDialogue);
             }
-            // Progressively replaces the text inside the dialogue system everytime.
+
             constructedDialogue += dialogueText[i];
             dialogueSystemText.SetText(constructedDialogue);
         }
-        // Turns on the continue dialogue flag
+
+        // Al terminar de escribir
         continueDialogueBool = true;
         setActiveTriangle(true);
-        // Registers dialogue in the Dialogue History
-        dialogueHistoryManager.RegisterDialogue(dialogueTable.Separators[globalDialogueID],
-                                     dialogueTable.CharacterNames[globalDialogueID], dialogueTable.Dialogues[globalDialogueID],
-                                     dialogueTable.ColorNames[globalDialogueID], dialogueTable.ColorDialogues[globalDialogueID],
-                                     dialogueTable.SpeedDialogues[globalDialogueID], dialogueTable.ImageNames[globalDialogueID]);
+
+        // Registrar en historial
+        try
+        {
+            dialogueHistoryManager.RegisterDialogue(
+                dialogueTable.Separators[globalDialogueID],
+                dialogueTable.CharacterNames[globalDialogueID],
+                dialogueTable.Dialogues[globalDialogueID],
+                dialogueTable.ColorNames[globalDialogueID],
+                dialogueTable.ColorDialogues[globalDialogueID],
+                dialogueTable.SpeedDialogues[globalDialogueID],
+                dialogueTable.ImageNames[globalDialogueID]
+            );
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Nothing to worry about, dialogue history manager just not present: " + ex.Message);
+        }
     }
 
-    public void dialogueButton() //Button that covers the whole dialogue system and continues or skips the dialogue
+    // Botón que cubre todo el sistema de diálogo
+    public void dialogueButton()
     {
         continueSkipDialogue();
     }
 
     void continueSkipDialogue()
     {
-        // checks if its posible to continue with next dialogue, otherwise it skips the coroutine and fills out the text.
-
+        // Si el texto ya terminó de escribirse, pasamos al siguiente diálogo
         if (continueDialogueBool)
         {
             setActiveTriangle(false);
             dialogueSystemText.SetText("");
             continueDialogueBool = false;
-            // Load next dialogue
+
+            // Pasar al siguiente ID
             globalDialogueID += 1;
-            // Loads a dialogue if: there are any dialogues left, it has not met any different separators, and has not met the same separator twice
 
             bool hasDialoguesLeft = (dialogueTable.Ids.Length > globalDialogueID);
-            //Debug.Log("hasDialoguesLeft: " + hasDialoguesLeft);
+
             if (hasDialoguesLeft)
             {
-                bool hasMetDifferentSeparator = (globalSeparator != dialogueTable.Separators[globalDialogueID] && !string.IsNullOrEmpty(dialogueTable.Separators[globalDialogueID]));
-
-                //Debug.Log("hasMetDifferentSeparator: " + hasMetDifferentSeparator);
-                
-                //                                                          AND    the global separator is not an empty string
-                if (!hasMetDifferentSeparator && globalSeparatorFlag == false && !string.IsNullOrEmpty(globalSeparator))
+                // Mientras el separador sea el mismo que el global, seguimos la cadena
+                if (dialogueTable.Separators[globalDialogueID] == globalSeparator)
                 {
-                    globalSeparatorFlag = globalSeparator == dialogueTable.Separators[globalDialogueID];
                     LoadDialogue(globalDialogueID);
                 }
                 else
-                { endDialogueSequence(); }
+                {
+                    // Separador distinto → terminar secuencia
+                    endDialogueSequence();
+                }
             }
-            else { endDialogueSequence(); }
+            else
+            {
+                // No quedan más diálogos
+                endDialogueSequence();
+            }
         }
         else
         {
-            //Debug.Log("SKIPPED DIALOGUE");
-            // Registers dialogue in the Dialogue History
-            dialogueHistoryManager.RegisterDialogue(dialogueTable.Separators[globalDialogueID],
-                                     dialogueTable.CharacterNames[globalDialogueID], dialogueTable.Dialogues[globalDialogueID],
-                                     dialogueTable.ColorNames[globalDialogueID], dialogueTable.ColorDialogues[globalDialogueID],
-                                     dialogueTable.SpeedDialogues[globalDialogueID], dialogueTable.ImageNames[globalDialogueID]);
+            // Si aún se está escribiendo, saltamos al final del diálogo actual
+            try
+            {
+                dialogueHistoryManager.RegisterDialogue(
+                    dialogueTable.Separators[globalDialogueID],
+                    dialogueTable.CharacterNames[globalDialogueID],
+                    dialogueTable.Dialogues[globalDialogueID],
+                    dialogueTable.ColorNames[globalDialogueID],
+                    dialogueTable.ColorDialogues[globalDialogueID],
+                    dialogueTable.SpeedDialogues[globalDialogueID],
+                    dialogueTable.ImageNames[globalDialogueID]
+                );
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Nothing to worry about, dialogue history manager just not present: " + ex.Message);
+            }
+
             StopAllCoroutines();
             dialogueSystemText.SetText(dialogueTable.Dialogues[globalDialogueID]);
             setActiveTriangle(true);
             continueDialogueBool = true;
         }
     }
-    void setActiveTriangle(bool Active) // Turns on/off the triangle animation
+
+    void setActiveTriangle(bool active)
     {
-        triangleImage.SetActive(Active);
+        triangleImage.SetActive(active);
     }
+
     void endDialogueSequence()
     {
-
         DialogueCanva.SetActive(false);
         globalSeparator = string.Empty;
-        globalSeparatorFlag = false;
 
         PlayerMovement.sharedInstancePlayerMovement.allowMovement = true;
         StopAllCoroutines();
-        DialogueEnded?.Invoke(); // <-- agregar
+
+        DialogueEnded?.Invoke();
     }
 }
