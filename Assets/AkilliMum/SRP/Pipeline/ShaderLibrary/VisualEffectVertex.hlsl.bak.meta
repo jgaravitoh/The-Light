@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 735c8d6900ef42d438309aa63aa0033d
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/VisualEffectVertex.hlsl.bak
+  uploadId: 729318

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 072b4b2363a3e4c49841186f185026ca
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/ThreadingEmuImpl.hlsl.bak
+  uploadId: 729318

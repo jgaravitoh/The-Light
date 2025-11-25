@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c9b91f699a791e14b9ab6279c5d8ca7c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Shaders/2D/Include/CombinedShapeLightShared.hlsl.bak
+  uploadId: 729318

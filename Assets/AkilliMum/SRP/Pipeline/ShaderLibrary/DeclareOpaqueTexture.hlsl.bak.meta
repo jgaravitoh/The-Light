@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a85b9d9607b09fa469c3940cf887a9ba
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/DeclareOpaqueTexture.hlsl.bak
+  uploadId: 729318

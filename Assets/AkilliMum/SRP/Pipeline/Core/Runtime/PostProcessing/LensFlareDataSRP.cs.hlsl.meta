@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d20b978e6a7929b428c62e71df2e27a3
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/Runtime/PostProcessing/LensFlareDataSRP.cs.hlsl
+  uploadId: 729318

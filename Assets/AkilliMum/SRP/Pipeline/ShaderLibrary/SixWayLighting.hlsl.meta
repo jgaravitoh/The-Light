@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 4c3ca1a91feab5040b8411b9de48178c
+timeCreated: 1676463407
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/SixWayLighting.hlsl
+  uploadId: 729318

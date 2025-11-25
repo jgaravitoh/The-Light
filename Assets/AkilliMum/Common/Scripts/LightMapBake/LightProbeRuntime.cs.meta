@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: bea86809e1dc1884b892b8d9332ec26d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Scripts/LightMapBake/LightProbeRuntime.cs
+  uploadId: 729318

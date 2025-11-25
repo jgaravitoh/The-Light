@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0454a4eb16461794ea3d048bd61af48e
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Shaders/PostProcessing/SubpixelMorphologicalAntialiasingBridge.hlsl
+  uploadId: 729318

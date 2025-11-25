@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 72128a81a3860c94c9e5b813faa27cb3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Model/SimpleMirror/Materials/DefaultMaterial.mat
+  uploadId: 729318

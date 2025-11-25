@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 37759ff918dd863409f64c27e42e6f27
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/ProbeVolumeVariants.hlsl
+  uploadId: 729318

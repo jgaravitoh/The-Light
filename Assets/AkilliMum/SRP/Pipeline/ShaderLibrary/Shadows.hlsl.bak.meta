@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0e8d5a8bb3ac4894c9f020916e4c6bd0
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/Shadows.hlsl.bak
+  uploadId: 729318

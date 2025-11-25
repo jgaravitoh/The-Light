@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7fff798638078524e95d6ee4a1315ada
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Shaders/Multiply Soft Scroll.shader
+  uploadId: 729318

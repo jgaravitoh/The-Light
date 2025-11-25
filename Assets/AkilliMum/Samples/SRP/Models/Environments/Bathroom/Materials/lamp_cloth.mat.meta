@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2b8ccf79c3ac20749b900b70b793b0cc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Models/Environments/Bathroom/Materials/lamp_cloth.mat
+  uploadId: 729318

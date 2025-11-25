@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2e2eaa4fad8d7104489778b43a8a73af
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Mirror/Script/BuoyantObject.cs
+  uploadId: 729318

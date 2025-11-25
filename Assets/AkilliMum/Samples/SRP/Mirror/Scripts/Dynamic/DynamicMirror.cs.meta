@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fcabc21e64e2caa419c89e5e939fd319
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Mirror/Scripts/Dynamic/DynamicMirror.cs
+  uploadId: 729318

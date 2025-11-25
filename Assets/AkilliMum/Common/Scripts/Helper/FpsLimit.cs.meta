@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1b467a3a8213c2e48a7e91d729643245
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Scripts/Helper/FpsLimit.cs
+  uploadId: 729318

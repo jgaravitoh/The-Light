@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aebd722a6ecfbb1469bfad7155c0dc54
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/SpaceFillingCurves.hlsl
+  uploadId: 729318

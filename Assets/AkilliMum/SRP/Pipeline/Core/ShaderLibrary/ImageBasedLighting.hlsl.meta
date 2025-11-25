@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7b88acb5bf4b81a4d956a029900fe56e
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/ImageBasedLighting.hlsl
+  uploadId: 729318

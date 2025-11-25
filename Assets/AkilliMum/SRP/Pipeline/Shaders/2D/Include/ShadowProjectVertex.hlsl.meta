@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6618b818b57059d48a4d2e11d612993e
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Shaders/2D/Include/ShadowProjectVertex.hlsl
+  uploadId: 729318

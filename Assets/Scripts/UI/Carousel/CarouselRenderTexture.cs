@@ -7,6 +7,8 @@ using System;
 
 public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
 {
+    public AudioSource audiosourceUI;
+    public AudioClip clip1, clip2, clip3;
     [Header("Parts Setup")]
     [SerializeField] private List<CarouselEntryRenderTexture> entries = new List<CarouselEntryRenderTexture>();
 
@@ -43,10 +45,12 @@ public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
     private Coroutine _scrollCoroutine;
     private void OnEnable()
     {
+        PlayerMovement.sharedInstancePlayerMovement.allowMovement = false;
         ScrollTo(0);
     }
     private void OnDisable()
     {
+        PlayerMovement.sharedInstancePlayerMovement.allowMovement = true;
         foreach (GameObject _gameObject  in gameObjectsModels)
         {
             _gameObject.SetActive(false);
@@ -122,6 +126,18 @@ public class CarouselRenderTexture : MonoBehaviour, IEndDragHandler
     
     private void ScrollTo(int index)
     {
+        audiosourceUI.Stop();
+        if (index == 0) { audiosourceUI.clip = clip1; }
+        else if (index == 1)
+        {
+            audiosourceUI.clip = clip2;
+        }
+        else if (index == 2)
+        {
+            audiosourceUI.clip = clip3;
+        }
+        audiosourceUI.Play();
+
         gameObjectsModels[_currentIndex].SetActive(false);
         _currentIndex = index;
         gameObjectsModels[_currentIndex].SetActive(true);

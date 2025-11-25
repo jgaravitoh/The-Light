@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 535ced60635bccb4cb58cf9c158fee14
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/Runtime/Utilities/BlitColorAndDepth.hlsl
+  uploadId: 729318

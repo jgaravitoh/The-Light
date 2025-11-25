@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5f67d15e5262eb14087a1a4b5504078f
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Mirror/Shader/AR/MirrorsOnly.shader
+  uploadId: 729318

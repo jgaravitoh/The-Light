@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f1ab2011464fc4245817ef4985c596de
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/API/Vulkan.hlsl
+  uploadId: 729318

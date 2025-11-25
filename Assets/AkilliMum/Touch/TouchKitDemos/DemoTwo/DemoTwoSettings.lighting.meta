@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ac472278685a79443923323fcfa3e874
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Touch/TouchKitDemos/DemoTwo/DemoTwoSettings.lighting
+  uploadId: 729318

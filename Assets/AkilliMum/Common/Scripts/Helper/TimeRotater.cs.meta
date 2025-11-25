@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: aa132dbd7735c8f44b439eb8166a0bc1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Scripts/Helper/TimeRotater.cs
+  uploadId: 729318

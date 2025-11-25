@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 423f3750b58f2ee44a1d9eb5f3f37bfe
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/UniversalMetaPass.hlsl
+  uploadId: 729318

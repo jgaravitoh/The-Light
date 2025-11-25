@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7f867f18a6b8e464aa0f720984c905db
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Models/Environments/Bathroom/Materials/_crome.mat
+  uploadId: 729318

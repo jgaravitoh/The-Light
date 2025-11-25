@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a27a18c85e868af4b933cd4b055f8df0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Touch/TouchKit/Recognizers/TKMovementRecognizer.cs
+  uploadId: 729318

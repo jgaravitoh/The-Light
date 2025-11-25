@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 52212a41f51255247a0c6275a5b26480
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/Threading.hlsl.bak
+  uploadId: 729318

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d3553e979c705674996e92375926fc2a
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/API/GLES3.hlsl
+  uploadId: 729318

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d194458a6814af145b6c6af54f871c2b
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/BRDF.hlsl
+  uploadId: 729318

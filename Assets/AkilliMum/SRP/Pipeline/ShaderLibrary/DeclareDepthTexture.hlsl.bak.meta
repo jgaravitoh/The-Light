@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ec04b814f1da9e046afec3ff612f8737
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/DeclareDepthTexture.hlsl.bak
+  uploadId: 729318

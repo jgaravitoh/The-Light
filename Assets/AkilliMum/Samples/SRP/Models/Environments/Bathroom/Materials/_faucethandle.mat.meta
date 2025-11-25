@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f9a452175d34424d9618a150c3c606c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Models/Environments/Bathroom/Materials/_faucethandle.mat
+  uploadId: 729318

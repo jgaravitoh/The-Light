@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2deac20f31fc5644497043f5a7b6aa14
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/SurfaceInput.hlsl
+  uploadId: 729318

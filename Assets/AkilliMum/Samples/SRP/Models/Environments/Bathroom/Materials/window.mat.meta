@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 013b6551d8c176d44bd7de04df557fad
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Models/Environments/Bathroom/Materials/window.mat
+  uploadId: 729318

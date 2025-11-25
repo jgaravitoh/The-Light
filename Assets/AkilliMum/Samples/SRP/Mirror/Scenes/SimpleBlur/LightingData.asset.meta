@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0db41278f3d0b6349be7ef0a19982c34
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Mirror/Scenes/SimpleBlur/LightingData.asset
+  uploadId: 729318

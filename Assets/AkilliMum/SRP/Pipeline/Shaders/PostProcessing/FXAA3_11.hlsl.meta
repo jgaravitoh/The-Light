@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 61c01fc56664d80469825620d4538513
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Shaders/PostProcessing/FXAA3_11.hlsl
+  uploadId: 729318

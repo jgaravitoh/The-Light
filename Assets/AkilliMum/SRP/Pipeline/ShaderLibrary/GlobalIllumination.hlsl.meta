@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 579d78c9c27d6f64fbb795ec4d909072
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/GlobalIllumination.hlsl
+  uploadId: 729318

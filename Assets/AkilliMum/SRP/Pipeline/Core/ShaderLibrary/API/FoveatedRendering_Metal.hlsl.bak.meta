@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4431f0cc208485e459fd7ea73a549679
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/API/FoveatedRendering_Metal.hlsl.bak
+  uploadId: 729318

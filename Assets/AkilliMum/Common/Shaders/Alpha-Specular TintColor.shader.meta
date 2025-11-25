@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e8f8a1cf503a35c4a898087d592934fc
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Shaders/Alpha-Specular TintColor.shader
+  uploadId: 729318

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6461e1439cd3bae43afad9067ff1d09a
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Shaders/EffectAlphaBlended_PaintPass.shader
+  uploadId: 729318

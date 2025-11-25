@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 85ee4a48caac40246a824cb32fca99fc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Mirror/Mirror Test Volume Profile.asset
+  uploadId: 729318

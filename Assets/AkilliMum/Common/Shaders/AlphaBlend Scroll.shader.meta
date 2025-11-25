@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1fee0f7dd81e8234288b4b075d2669f5
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Shaders/AlphaBlend Scroll.shader
+  uploadId: 729318

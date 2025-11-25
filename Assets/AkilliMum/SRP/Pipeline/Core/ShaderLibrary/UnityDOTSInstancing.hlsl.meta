@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ad9fc5c404f930d44821eeb721c53d15
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/UnityDOTSInstancing.hlsl
+  uploadId: 729318

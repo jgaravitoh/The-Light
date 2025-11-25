@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2c79e39e88cf6f142a092e3f4b99c956
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Mirror/Scenes/Mip Level/LightingData.asset
+  uploadId: 729318

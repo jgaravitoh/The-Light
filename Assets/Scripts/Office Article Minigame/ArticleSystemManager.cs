@@ -5,9 +5,35 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class ArticleSystemManager : MonoBehaviour
 {
+    public GameObject NPC1, NPC2, NPC3;
+    [Header("PostProcess / Global Volume")]
+    [SerializeField] private Volume globalVolume;                // Arrastra tu Global Volume aquí
+    [SerializeField] private float vignetteIncrementOnCorrect = 0.05f;
+    [SerializeField] private float vignetteMaxIntensity = 0.65f;
+    [SerializeField] private float vignetteLerpDuration = 0.5f;  // duración del suavizado
+
+    private Vignette _vignette;
+    private Coroutine _vignetteLerpCoroutine;
+
+    [Header("FX: Proyectiles de texto")]
+    [SerializeField] private TextProjectilePool textProjectilePool;   // 👈 arrástralo desde la escena
+    [SerializeField] private bool enableProjectileFx = true;
+
+    [Tooltip("Ráfaga base al empezar el minijuego")]
+    [SerializeField] private int baseBurstCount = 1;
+
+    [Tooltip("Spawn rate base (proyectiles por segundo)")]
+    [SerializeField] private float baseSpawnRate = 2f;
+
+    [Tooltip("Cuánto aumenta la ráfaga al acertar una opción")]
+    [SerializeField] private int burstIncrementOnCorrect = 1;
+
+
     // Variables para el minijuego
     [SerializeField] private List<Button> buttonList;
     [SerializeField] private TMP_InputField minigameText;
@@ -79,7 +105,23 @@ public class ArticleSystemManager : MonoBehaviour
     private void Start()
     {
         Load(); // auto-load on startup
+        InitPostProcessing();
     }
+
+    private void InitPostProcessing()
+    {
+        if (globalVolume == null)
+        {
+            Debug.LogWarning("[ArticleSystemManager] No hay Global Volume asignado.");
+            return;
+        }
+
+        if (!globalVolume.profile.TryGet(out _vignette))
+        {
+            Debug.LogWarning("[ArticleSystemManager] El VolumeProfile no tiene un Vignette override.");
+        }
+    }
+
 
     // Public: force reload (e.g., after changing Addressables key at runtime)
     public void Load() => LoadFromAddress(address);
@@ -286,13 +328,20 @@ public class ArticleSystemManager : MonoBehaviour
             randomizedArticleIndexes[j] = tmp;
         }
         minigameArticlesWritten = 0;
+        //  Encendemos y configuramos el FX de proyectiles si está habilitado
+        if (enableProjectileFx && textProjectilePool != null)
+        {
+            textProjectilePool.SetSpawnEnabled(true);
+            textProjectilePool.SetSpawnRate(baseSpawnRate);
+            textProjectilePool.SetBurstCount(baseBurstCount);
+            textProjectilePool.SetSpawnAutomatically(true);
+        }
         StartCoroutine(ArticleTyper(0.02f));
         // Comenzar a escribir el artículo
     }
 
     IEnumerator ArticleTyper(float characterTypingDelay)
     {
-
         yield return new WaitForSeconds(1);
 
         // Indices base
@@ -362,6 +411,10 @@ public class ArticleSystemManager : MonoBehaviour
 
         // Fin del artículo
         minigameArticlesWritten += 1;
+        if (enableProjectileFx && textProjectilePool != null && burstIncrementOnCorrect != 0)
+        {
+            textProjectilePool.IncrementBurstCount(burstIncrementOnCorrect);
+        }
         if (minigameArticlesWritten < ARTICLES_MAXIMUM_TO_WRITE)
         {
             minigameMakeTimePassPanel.SetActive(true);
@@ -512,12 +565,58 @@ public class ArticleSystemManager : MonoBehaviour
         if (legacy != null) legacy.text = text;
     }
 
+    public void SetProjectileFxActive(bool active)
+    {
+        enableProjectileFx = active;
+        if (textProjectilePool == null) return;
+
+        textProjectilePool.SetSpawnEnabled(active);
+    }
+
+    // --- Vignette con Lerp ---
+    private void IncreaseVignetteOnCorrect()
+    {
+        if (_vignette == null) return;
+
+        float current = _vignette.intensity.value;
+        float target = Mathf.Clamp(current + vignetteIncrementOnCorrect, 0f, vignetteMaxIntensity);
+
+        // Si ya se estaba haciendo un lerp, lo cortamos
+        if (_vignetteLerpCoroutine != null)
+            StopCoroutine(_vignetteLerpCoroutine);
+
+        _vignetteLerpCoroutine = StartCoroutine(LerpVignetteIntensity(current, target, vignetteLerpDuration));
+    }
+
+    private IEnumerator LerpVignetteIntensity(float from, float to, float duration)
+    {
+        if (duration <= 0f)
+        {
+            _vignette.intensity.value = to;
+            yield break;
+        }
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            _vignette.intensity.value = Mathf.Lerp(from, to, t);
+            yield return null;
+        }
+
+        _vignette.intensity.value = to;
+        _vignetteLerpCoroutine = null;
+    }
+
     public void CorrectAnswerButton()
     {
         foreach (Button button in buttonList)
         {
             button.onClick.RemoveAllListeners();
         }
+        IncreaseVignetteOnCorrect();
     }
 
     public void WrongAnswerButton()
@@ -533,14 +632,22 @@ public class ArticleSystemManager : MonoBehaviour
 
     public void StopMinigame()
     {
+        NPC1.SetActive(false); NPC2.SetActive(false); NPC3.SetActive(false);
         ResetMinigame();
         computerCameraZone.SetActive(false);
         afterMinigameHitboxDialogue.SetActive(true);
         afterMinigameHitboxLoadScene.SetActive(true);
+
+        if (textProjectilePool != null)
+        {
+            textProjectilePool.SetSpawnEnabled(false);
+        }
+
         gameObject.GetComponent<MakeEvanMove>().MoveEvan();
 
         PlayerMovement.sharedInstancePlayerMovement.allowMovement = true;
         DialogueSystemManager.sharedInstanceDialogueManager.LoadDialogue(DIALOGUE_EVAN_WANTS_TO_GO_HOME_SEQUENCE);
+
         computerPanel.SetActive(false);
     }
 }

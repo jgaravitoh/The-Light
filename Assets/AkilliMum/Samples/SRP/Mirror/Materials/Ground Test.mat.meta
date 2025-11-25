@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 26d4db1454c3ed340b64b3f63f3b41dc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Mirror/Materials/Ground Test.mat
+  uploadId: 729318

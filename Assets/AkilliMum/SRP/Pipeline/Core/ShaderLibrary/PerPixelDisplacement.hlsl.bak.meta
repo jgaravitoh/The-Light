@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b53cddcd017e0304f89f47c18196ddec
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/PerPixelDisplacement.hlsl.bak
+  uploadId: 729318

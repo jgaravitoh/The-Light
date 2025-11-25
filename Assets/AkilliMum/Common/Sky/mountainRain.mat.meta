@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8bb0a1fe0d87f2d4b91efe96aa3d68b9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Sky/mountainRain.mat
+  uploadId: 729318

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fdde69eb5f4733942b1733aec80598ee
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Shaders/BakedLitForwardPass.hlsl.bak
+  uploadId: 729318

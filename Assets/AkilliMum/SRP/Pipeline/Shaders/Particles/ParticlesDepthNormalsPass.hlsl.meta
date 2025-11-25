@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aa9c54cab274e3147ae05c708034842b
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Shaders/Particles/ParticlesDepthNormalsPass.hlsl
+  uploadId: 729318

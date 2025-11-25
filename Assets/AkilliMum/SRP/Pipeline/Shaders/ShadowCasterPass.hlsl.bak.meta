@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 36179bd9723bd5b4c82f7b43faa829c1
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Shaders/ShadowCasterPass.hlsl.bak
+  uploadId: 729318

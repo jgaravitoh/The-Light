@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 94d511496a1166c4ea84ed730f2f1c61
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Mirror/Script/MirrorMultiManager.cs
+  uploadId: 729318

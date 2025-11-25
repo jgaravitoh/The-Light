@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 25c218335f1160a4ea30f25d7fd69d17
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Touch/TouchKit/Recognizers/TKLongPressRecognizer.cs
+  uploadId: 729318

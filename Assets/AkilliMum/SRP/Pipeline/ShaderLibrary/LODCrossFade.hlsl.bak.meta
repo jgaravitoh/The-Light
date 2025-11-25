@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 80461e568c5f33945b7b9878f8bd8d54
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/ShaderLibrary/LODCrossFade.hlsl.bak
+  uploadId: 729318

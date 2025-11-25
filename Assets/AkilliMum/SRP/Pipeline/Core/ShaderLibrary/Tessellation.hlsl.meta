@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b179ed0df4e1bd040896b35a377bad81
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/ShaderLibrary/Tessellation.hlsl
+  uploadId: 729318

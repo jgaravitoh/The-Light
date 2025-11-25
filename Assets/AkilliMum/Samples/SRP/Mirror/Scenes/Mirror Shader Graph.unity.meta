@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bc59b29e1e1401b4dad89f6e5a719cd2
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Mirror/Scenes/Mirror Shader Graph.unity
+  uploadId: 729318

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d93685a9f7563b542a5b0953c3ed1eaa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Models/Environments/Bathroom/Materials/_lamp_metal_baseColor.mat
+  uploadId: 729318

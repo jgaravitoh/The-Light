@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 804ab2e6a99de4c44b513514a6a2123b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Shaders/Add Scroll.shader
+  uploadId: 729318

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6f7ebd16b7e10de468b26bb28772b7c1
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Shaders/Multiply Soft.shader
+  uploadId: 729318

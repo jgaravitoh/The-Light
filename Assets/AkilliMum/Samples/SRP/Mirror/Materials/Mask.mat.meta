@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fc5228ecd2ee95440b5e9dde76df0ec1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Mirror/Materials/Mask.mat
+  uploadId: 729318

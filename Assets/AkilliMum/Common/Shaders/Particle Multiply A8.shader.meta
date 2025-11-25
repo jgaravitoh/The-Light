@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 090dbc88c8b6da947a0d078b3678b549
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Common/Shaders/Particle Multiply A8.shader
+  uploadId: 729318

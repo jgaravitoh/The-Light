@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 62b6719148a648744a7bc611d41176f5
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/SRP/Pipeline/Core/Runtime/PostProcessing/Shaders/ffx/ffx_fsr1.hlsl
+  uploadId: 729318

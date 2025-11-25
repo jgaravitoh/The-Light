@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c96c3183fd30ebb4b8eb5915983c0c27
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135215
+  packageName: URP Mirror Shaders / AR-VR Ready
+  packageVersion: 5.13
+  assetPath: Assets/AkilliMum/Samples/SRP/Mirror/Prefabs/Camera Prefab.prefab
+  uploadId: 729318

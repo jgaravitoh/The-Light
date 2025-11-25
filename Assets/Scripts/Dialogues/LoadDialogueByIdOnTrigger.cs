@@ -7,11 +7,13 @@ public class LoadDialogueByIDOnTrigger : MonoBehaviour
     [SerializeField] private int dialogueID;
     [SerializeField] private bool randomDialogueBool;
     [SerializeField] private int lowerBound, upperBound;
+    [SerializeField] private bool allowMovement = true;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(_targetTag))
         {
+            PlayerMovement.sharedInstancePlayerMovement.allowMovement = allowMovement;
             int selectedDialogueID = dialogueID;
 
             if (randomDialogueBool)
@@ -28,6 +30,8 @@ public class LoadDialogueByIDOnTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(_targetTag))
         {
+            PlayerMovement.sharedInstancePlayerMovement.allowMovement = allowMovement;
+
             int selectedDialogueID = dialogueID;
 
             if (randomDialogueBool)
